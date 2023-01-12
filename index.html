@@ -31,7 +31,8 @@ fieldset { border-color: black;}
 	</style>
 <script type="module">
 // You need to include rrule.js library to use this function
-import * as RRule from 'https://jakubroztocil.github.io/rrule/dist/es5/rrule.js';
+//~ import * as RRule from 'https://jakubroztocil.github.io/rrule/dist/es5/rrule.js';
+import * as RRule from 'http://btc.bplaced.net/script/rrule.min.js';
 
 document.addEventListener("DOMContentLoaded", function(event) { 
 
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var e = x.after(now);
 		tag.setAttribute('datetime', new Date(e - -now.getTimezoneOffset()*60000).toISOString());
 		var f = new Intl.DateTimeFormat("de-DE", { //timeZoneName: "short", second: "numeric" 
-			 timeZone: "UTC", year: "numeric", month: "short", day: "2-digit", weekday: "short", hour: "numeric", minute: "numeric" }).format(e);
+			 timeZone: "UTC", year: "numeric", month: "long", day: "2-digit", weekday: "long", hour: "numeric", minute: "numeric" }).format(e);
 		tag.innerHTML = "nächster Termin am " + f + " Uhr";
 	}
 
@@ -74,11 +75,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		</ul>
 		<p>Manche/r findet sich auch bei weiteren Gruppen ein:</p>
 		<ul>
-			<li><a href="https://bitcoin-leipzig.de/" target="_blank">Bitcoin Leipzig</a> jeweils monatlich am 3. Donnerstag im <a href="https://www.openstreetmap.org/node/3955657883" target="_blank">Café Uptown</a> (gelegentlich konnte auch mit Bitcoin gezahlt werden) und am 1. Mittwoch im <a href="https://dezentrale.space/" target="_blank">Hackspace dezentrale</a></li>
+			<li><a href="https://bitcoin-leipzig.de/" target="_blank">Bitcoin Leipzig</a> <time datetime="DTSTART=20131017T190000Z;FREQ=MONTHLY;BYDAY=3TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0">jeweils monatlich am 3. Donnerstag ab 19 Uhr</time> im <a href="https://www.openstreetmap.org/node/3955657883" target="_blank">Café Uptown</a> (gelegentlich konnte auch mit Bitcoin gezahlt werden) und <em>Bitcoin Themenabend</em>: <time datetime="DTSTART=20171101T190000Z;FREQ=MONTHLY;BYDAY=1WE;BYHOUR=19;BYMINUTE=0;BYSECOND=0">jeden 1. Mittwoch ab 19 Uhr</time> im <a href="https://dezentrale.space/" target="_blank">Hackspace dezentrale</a></li><!-- https://bitcointalk.org/index.php?topic=308377.0 , https://bitcointalk.org/index.php?topic=2335694.0  -->
+			<li><a href="https://www.bitcoin-goerlitz.de/">Bitcoin-Meetup Görlitz</a>: <time datetime="DTSTART=20230116T190000Z;FREQ=MONTHLY;BYDAY=3MO;BYHOUR=19;BYMINUTE=0;BYSECOND=0">jeden 3. Montag ab 19 Uhr</time> in <a href="https://www.openstreetmap.org/node/8196458496">Jakobs Speiselokal</a></li>
 			<li>Auch zu anderen Themen beim <a href="https://c3d2.de/space.html" target="_blank">Chaos Computer Club Dresden</a></li>
 			<li>Für solche mit robustem Magen: <a href="https://www.meetup.com/de-DE/BlockchainMeetupSaxony/" target="_blank">Blockchain Meetup Saxony</a></li>
-			<li><a href="https://www.meetup.com/de-DE/Bitcoin-Lab-Berlin/events/tmxjlsydcfbfb/" target="_blank">Berliner Bitcoin-Stammtisch</a> am 1. Donnerstag im <a href="https://www.friedelrichter.de/" target="_blank">Friedel Richter</a>, ggf. auch <a href="https://meet.fulmo.org/BitcoinStammtischBerlin" target="_blank">online</a></li>
+			<li><a href="https://www.meetup.com/de-DE/Bitcoin-Lab-Berlin/events/tmxjlsydcfbfb/" target="_blank">Berliner Bitcoin-Stammtisch</a>: <time datetime="DTSTART=20110714T190000Z;FREQ=MONTHLY;BYDAY=1WE;BYHOUR=19;BYMINUTE=0;BYSECOND=0">jeden 1. Donnerstag ab 19 Uhr</time> im <a href="https://www.friedelrichter.de/" target="_blank">Friedel Richter</a>, ggf. auch <a href="https://meet.fulmo.org/BitcoinStammtischBerlin" target="_blank">online</a></li>
+<!--
 			<li>Weitere Orte mit regelmäßgen Treffen auf der <a href="https://coinspondent.de/regelmaessige-bitcoin-treffen/" target="_blank">Liste des Coinspondent</a></li>
+-->
 			<li>Eine <a href="https://einundzwanzig.space/meetups/">Liste von Treffen</a> von <code>einundzwanzig.space</code></li>
 		</ul>
 	</section>
