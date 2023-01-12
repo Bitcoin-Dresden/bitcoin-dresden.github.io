@@ -37,10 +37,8 @@ import * as RRule from 'http://btc.bplaced.net/script/rrule.min.js';
 document.addEventListener("DOMContentLoaded", function(event) { 
 
 	for(const tag of document.getElementsByTagName("time")){
-		var r = tag.getAttribute('datetime').toUpperCase();
-		var x = rrule.RRule.fromString(r);
 		var now = new Date();
-		var e = x.after(now);
+		var e = rrule.RRule.fromString(tag.getAttribute('datetime').toUpperCase()).after(now);
 		tag.setAttribute('datetime', new Date(e - -now.getTimezoneOffset()*60000).toISOString());
 		var f = new Intl.DateTimeFormat("de-DE", { //timeZoneName: "short", second: "numeric" 
 			 timeZone: "UTC", year: "numeric", month: "long", day: "2-digit", weekday: "long", hour: "numeric", minute: "numeric" }).format(e);
@@ -92,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		<p lang="en">You can <del>not</del> <a href="https://www.dresden-zahnarzt.de/tag/bitcoin" target="_blank">bitcoin your dentist</a>, <a href="https://pretix.eu/fulmo/" target="_blank">bitcoin conventions</a>, <a href="https://raspiblitz.org/" target="_blank">pay for coffee</a>.</p>
 		<p>Für die Treffen wären Gastronomie oder andere Hosts mit Bitcoin Akzeptanz natürlich sehr willkommen. Wenn euch etwas bekannt wird oder ihr einen Gastronomen direkt kennt, <a href="#kontakt">meldet euch</a> gerne.</p>
 		<ul>
-			<li><a href="https://www.openstreetmap.org/node/9174513637" target="_blank">Petzi's Sportsbar</a> (Seit 2021-10-14 wird auf der Leipziger Str. 228 – neben Girogard und Bargeld – gelegentlich auch Bitcoin akzeptiert)</li>
+			<li><a href="https://www.openstreetmap.org/node/9174513637" target="_blank">Petzi's Sportsbar</a> (Seit 2021-10-14 wird auf der Leipziger Str. 228 – neben Girocard und Bargeld – gelegentlich auch Bitcoin akzeptiert)</li>
 		</ul>
 		<p>Weitere uns persönlich bekannte Geschäfte in Dresden:</p>
 		<table>
@@ -171,13 +169,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			<li><a href="https://www.youtube.com/watch?v=i9cDyhho4nk">Have Fun Staying Poor von Matt Hodl</a>; donate: <a href="bitcoin:3PgsWQbLDeKEmGuSJSXm4Ubrdzj5UDMJwF">3PgsWQbLDeKEmGuSJSXm4Ubrdzj5UDMJwF</a></li>
 			<li><a href="https://www.nbtv.media/">Naomi Brockwell</a> mit zahlreichen Cover Songs, wie <a href="https://www.youtube.com/watch?v=7TXavYgFPX0">Bitcoin Girl</a></li>
 			<li><a href="https://leo-mattes.com/pump-it-up/">Noch mehr Songs …</a></li>
-			<li><a href="https://josie.io/collections/original-paintings">J. Bellini</a></li>
+			<li><a href="https://josie.io/collections/original-paintings">J. Bellini</a> – Malerei</li>
+			<li><a href="https://thelittlehodler.com/">Lina Seiche</a> – Little Hodler Merch</li>
+			<li><a href="https://www.bitcoinapexart.com/">Bitcoin APEX Art</a> – unique Bitcoin graphite art – Daniel Kränkel Bleistiftzeichnungen</li>
+			<li><a href="https://twitter.com/musikertreff">@Musikertreff</a>'s Honig: <a href="https://satoshistore.io/products/cyberbee-honey">bei SatoshiStore</a>, <a href="https://saltndaisy.at/">bei Salt'n Daisy</a> und Lieder: <a href="https://www.youtube.com/watch?v=YwY_oN-2C-M">Ois auf pump</a> (<a href="./lieder/600-Ois-auf-pump_de-en.pdf">Text</a>, <a href="./lieder/Musikertreff-OisAufPump.pdf">Noten</a>), <a href="https://www.youtube.com/watch?v=_S0ar6uCexs">Es is ah Traum</a> (<a href="./lieder/601-De-Loesung-fuer-Ois.pdf">Text</a>, <a href="./lieder/Musikertreff-EsIsAhTraum.pdf">Noten</a>)</li>
+		</ul>
+
+		<h3 id="hardware">Hardware &amp; Backup-Lösungen</h3>
+		<ul>
+			<li><a href="https://seedsigner.com/">SeedSigner</a></li>
+			<li><a href="https://shiftcrypto.shop/">Shiftcrypto</a>'s Bitbox – Rabatt-Codes: <code>EINUNDZWANZIG</code>, <code>EINUNDZWANZIG10</code></li>
+			<li><a href="https://tinyseed.io/">Tinyseed</a></li>
+			<li><a href="https://copiaro.de/en/category/all-brands-manufacturers/vulcan-en/">Vulcan</a>'s Steel-QR</li>
+			<li><a href="https://raspiblitz.org/">RaspiBlitz</a></li>
+			<li>Verschiedenes auch bei <a href="https://satoshistore.io/collections/wallet-backup">SatoshiStore</a></li>
 		</ul>
 
 		<h3 id="cashbach-online-shopping">Cashback / Online Shopping</h3>
 		<ul>
 			<li><a href="https://stekking.com/">Stekking</a></li>
 			<li><a href="https://www.shoop.de/">Shoop</a></li>
+			<li><a href="https://satsback.com/">Satsback</a></li>
 		</ul>
 	</section>
 	<section id="kontakt">
