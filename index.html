@@ -29,6 +29,25 @@ fieldset { border-color: black;}
 	body #wrap { font-size: 1.2em; width: 80%; }
 }
 	</style>
+<script type="module">
+// You need to include rrule.js library to use this function
+import * as RRule from 'https://jakubroztocil.github.io/rrule/dist/es5/rrule.js';
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+
+	for(const tag of document.getElementsByTagName("time")){
+		var r = tag.getAttribute('datetime').toUpperCase();
+		var x = rrule.RRule.fromString(r);
+		var now = new Date();
+		var e = x.after(now);
+		tag.setAttribute('datetime', new Date(e - -now.getTimezoneOffset()*60000).toISOString());
+		var f = new Intl.DateTimeFormat("de-DE", { //timeZoneName: "short", second: "numeric" 
+			 timeZone: "UTC", year: "numeric", month: "short", day: "2-digit", weekday: "short", hour: "numeric", minute: "numeric" }).format(e);
+		tag.innerHTML = "nächster Termin am " + f + " Uhr";
+	}
+
+});
+</script>
 </head><body><div id="wrap" class="container">
 	<div><span style="float: right;" class="icon-Bitcoin-Lightning-White-Gold-Rounded icon-7x"></span></div>
 	<section>
@@ -36,11 +55,12 @@ fieldset { border-color: black;}
 		<h1 id="bitcoin-dresden">Bitcoin Dresden</h1>
 
 		<h3 id="vor-und-nach-dem-stammtisch">Vor und nach dem Stammtisch</h3>
-		<p>Als ständige Austauschmöglichkeit zwischen den Treffen gibt es eine kleine <a href="https://t.me/BitcoinDresden" target="_blank">Gruppe auf Telegram</a>. S. a. <a href="https://c3d2.de/calendar.html">Kalender inkl. Feeds vom C3D2</a> und neuerdings auf <a href="https://www.meetup.com/de-DE/dresdner-bitcoin-stammtisch">Meetup.com</a> (Danke Björn!)</p>
+		<p>Als ständige Austauschmöglichkeit zwischen den Treffen gibt es eine kleine <a href="https://t.me/BitcoinDresden" target="_blank">Gruppe auf Telegram</a>. S. a. <a href="https://c3d2.de/calendar.html">Kalender inkl. Feeds vom C3D2</a> und auf <a href="https://www.meetup.com/de-DE/dresdner-bitcoin-stammtisch">Meetup.com</a> (Danke Björn!)</p>
 
 		<h3 id="lokale-treffen">Lokale Treffen</h3>
-		<p>Geselliges Treffen von Bitcoinern an jedem 2. Donnerstag des Monats. Thema ist alles um Bitcoin außer dem Preis.</p>
+		<p>Geselliges Treffen von Bitcoinern: <time datetime="DTSTART=20221110T190000Z;FREQ=MONTHLY;BYDAY=2TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0">an jedem 2. Donnerstag des Monats ab 19 Uhr</time>. Thema ist alles um Bitcoin außer Wechselkursen.</p>
 		<ul><u>Weitere Termine</u>:
+<!--		<li><time datetime="2022-11-10T18:00:00+01:00">10. November 2022 ab 19 Uhr</time> Zum ersten mal im <a href="https://www.openstreetmap.org/#map=19/51.06552/13.75709">Kelix</a> (Presseberichte: <a href="https://www.lust-auf-dresden.com/post/neuer%C3%B6ffnung-kelix-die-1-99-bar">1</a>, <a href="https://www.neustadt-ticker.de/186442/aktuell/zwei-neue-cafes-2">2</a>).</li>-->
 <!--
 		<li><time datetime="2022-07-21T18:00:00+01:00">21. Juli 2022 ab 18 Uhr</time> Zur Abwechslung mal beim Großen Garten im <a href="https://www.paul-rackwitz.de/">Biergarten Rachwitz</a>.</li>
 -->
@@ -88,10 +108,10 @@ fieldset { border-color: black;}
 				<td><a href="https://dresdentech.de/" target="_blank">DresdenTech UG</a></td>
 				<td>BC, LN</td>
 			</tr>
-			<tr>
+			<!--tr>
 				<td><a href="https://www.openstreetmap.org/#map=19/51.05979/13.74260" target="_blank">Sokrates</a></td>
 				<td>BC</td>
-			</tr>
+			</tr-->
 			<tr>
 				<td><a href="https://www.openstreetmap.org/#map=19/51.09542/13.71100" target="_blank">Ferienwohnung im Wasserwerk Trachau</a></td>
 				<td>BC</td>
@@ -107,6 +127,7 @@ fieldset { border-color: black;}
 		</p>
 		<ul>
 			<li><a href="https://coinpages.io/" target="_blank">Coinpages belohnt neue Einträge mit Sats!</a></li>
+			<li><a href="https://btcmap.org/">BTC Map</a> – durch Nutzerfeedback aktualisierte Karte auch als App</li>
 			<li><a href="https://www.coinmap.it/#13/51.0711/13.7472" target="_blank">coinmap.it</a></li>
 			<li><a href="https://coinmap.org/" target="_blank">coinmap.org</a></li>
 			<li><a href="https://map.bitcoin.com/" target="_blank">map.bitcoin.com</a></li>
