@@ -1,7 +1,7 @@
 // You need to include rrule.js library to use this function
 // used v2.7.1 in January 2023, see https://github.com/jakubroztocil/rrule/releases/latest for updates
 //~ import * as RRule from 'https://jakubroztocil.github.io/rrule/dist/es5/rrule.js';
-import * as RRule from 'https://btc.bplaced.net/script/rrule.min.js';
+import * as RRule from 'https://bitcoin-dresden.de/script/rrule.min.js';
 
 document.addEventListener("DOMContentLoaded", function(event) { 
 
