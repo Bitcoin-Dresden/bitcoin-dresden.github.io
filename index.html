@@ -28,32 +28,12 @@ fieldset { border-color: black;}
 	label { display:inline-block;width: 12ex; }
 	body #wrap { font-size: 1.2em; width: 80%; }
 }
+time { font-style: italic; }
+time.rrule { font-weight: bold; }
 	</style>
-<script type="module">
-// You need to include rrule.js library to use this function
-import * as RRule from 'https://jakubroztocil.github.io/rrule/dist/es5/rrule.js';
-//~ import * as RRule from 'http://btc.bplaced.net/script/rrule.min.js';
-
-
-document.addEventListener("DOMContentLoaded", function(event) { 
-
-	for(const tag of document.getElementsByTagName("time")){
-		var now = new Date();
-		var rule = rrule.RRule.fromString(tag.getAttribute('datetime').toUpperCase());
-		var e = rule.after(now);
-		tag.setAttribute('datetime', new Date(e - -now.getTimezoneOffset()*60000).toISOString());
-		var f = new Intl.DateTimeFormat("de-DE", { //timeZoneName: "short", second: "numeric" | day: "2-digit" 
-			 timeZone: "UTC", year: "numeric", month: "long", day: "numeric", weekday: "long", hour: "numeric", minute: "numeric" }).format(e).replace(' um ',' ab ');
-		//~ console.log(f);
-		tag.innerHTML = "nächster Termin am " + f + " Uhr";
-		var title = rule.toText().replace('every day','jeden Tag').replace('every week','jede Woche').replace('every month','jeden Monat').replace('every year','jedes Jahr').replace('on the','am').replace('Monday','Montag').replace('Tuesday','Dienstag').replace('Wednesday','Mittwoch').replace('Thursday','Donnerstag').replace('Friday','Freitag').replace('Saturday','Samstag').replace('Sunday','Sonntag').replace('2nd','zweiten').replace('1st','ersten').replace('3rd','dritten').replace('4th','vierten') + " " + f.substr(f.lastIndexOf('ab '));
-		//~ console.log(title);
-		tag.setAttribute('title', title);
-	}
-
-});
-</script>
+<script type="module" src="./script/eventdate.js"></script>
 </head><body><div id="wrap" class="container">
+	<noscript>JavaScript ist deaktiviert, dadurch wird beispielsweise nicht das nächste Datum der Events berechnet, sondern bleibt allgemein beschrieben.</noscript>
 	<div><span style="float: right;" class="icon-Bitcoin-Lightning-White-Gold-Rounded icon-7x"></span></div>
 	<section>
 
@@ -63,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		<p>Als ständige Austauschmöglichkeit zwischen den Treffen gibt es eine kleine <a href="https://t.me/BitcoinDresden" target="_blank">Gruppe auf Telegram</a>. S. a. <a href="https://c3d2.de/calendar.html">Kalender inkl. Feeds vom C3D2</a> und auf <a href="https://www.meetup.com/de-DE/dresdner-bitcoin-stammtisch">Meetup.com</a> (Danke Björn!)</p>
 
 		<h3 id="lokale-treffen">Lokale Treffen</h3>
-		<p>Geselliges Treffen von Bitcoinern: <time datetime="DTSTART=20221110T190000Z;FREQ=MONTHLY;BYDAY=2TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0">an jedem 2. Donnerstag des Monats ab 19 Uhr</time>. Thema ist alles um Bitcoin außer Wechselkursen.</p>
+		<p>Geselliges Treffen von Bitcoinern: <time class="rrule" datetime="DTSTART=20221110T190000Z;FREQ=MONTHLY;BYDAY=2TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0">an jedem 2. Donnerstag des Monats ab 19 Uhr</time>. Thema ist alles um Bitcoin außer Wechselkursen.</p>
 		<ul><u>Weitere Termine</u>:
 <!--		<li><time datetime="2022-11-10T18:00:00+01:00">10. November 2022 ab 19 Uhr</time> Zum ersten mal im <a href="https://www.openstreetmap.org/#map=19/51.06552/13.75709">Kelix</a> (Presseberichte: <a href="https://www.lust-auf-dresden.com/post/neuer%C3%B6ffnung-kelix-die-1-99-bar">1</a>, <a href="https://www.neustadt-ticker.de/186442/aktuell/zwei-neue-cafes-2">2</a>).</li>-->
 <!--
@@ -79,12 +59,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		</ul>
 		<p>Manche/r findet sich auch bei weiteren Gruppen ein:</p>
 		<ul>
-			<li><a href="https://bitcoin-leipzig.de/" target="_blank">Bitcoin Leipzig</a> <time datetime="DTSTART=20131017T190000Z;FREQ=MONTHLY;BYDAY=3TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0">jeweils monatlich am 3. Donnerstag ab 19 Uhr</time> im <a href="https://www.openstreetmap.org/node/3955657883" target="_blank">Café Uptown</a> (gelegentlich konnte auch mit Bitcoin gezahlt werden) und <em>Bitcoin Themenabend</em>: <time datetime="DTSTART=20171101T190000Z;FREQ=MONTHLY;BYDAY=1WE;BYHOUR=19;BYMINUTE=0;BYSECOND=0">jeden 1. Mittwoch ab 19 Uhr</time> im <a href="https://dezentrale.space/" target="_blank">Hackspace dezentrale</a></li><!-- https://bitcointalk.org/index.php?topic=308377.0 , https://bitcointalk.org/index.php?topic=2335694.0  -->
-			<li><a href="https://www.bitcoin-goerlitz.de/">Bitcoin-Meetup Görlitz</a>: <time datetime="DTSTART=20230116T190000Z;FREQ=MONTHLY;BYDAY=3MO;BYHOUR=19;BYMINUTE=0;BYSECOND=0">jeden 3. Montag ab 19 Uhr</time> in <a href="https://www.openstreetmap.org/node/8196458496">Jakobs Speiselokal</a></li>
+			<li><a href="https://bitcoin-leipzig.de/" target="_blank">Bitcoin Leipzig</a> <time class="rrule" datetime="DTSTART=20131017T190000Z;FREQ=MONTHLY;BYDAY=3TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0">jeweils monatlich am 3. Donnerstag ab 19 Uhr</time> im <a href="https://www.openstreetmap.org/node/3955657883" target="_blank">Café Uptown</a> (gelegentlich konnte auch mit Bitcoin gezahlt werden) und <em>Bitcoin Themenabend</em>: <time class="rrule" datetime="DTSTART=20171101T190000Z;FREQ=MONTHLY;BYDAY=1WE;BYHOUR=19;BYMINUTE=0;BYSECOND=0">jeden 1. Mittwoch ab 19 Uhr</time> im <a href="https://dezentrale.space/" target="_blank">Hackspace dezentrale</a></li><!-- https://bitcointalk.org/index.php?topic=308377.0 , https://bitcointalk.org/index.php?topic=2335694.0  -->
+			<li><a href="https://www.bitcoin-goerlitz.de/">Bitcoin-Meetup Görlitz</a>: <time class="rrule" datetime="DTSTART=20230116T190000Z;FREQ=MONTHLY;BYDAY=3MO;BYHOUR=19;BYMINUTE=0;BYSECOND=0">jeden 3. Montag ab 19 Uhr</time> in <a href="https://www.openstreetmap.org/node/8196458496">Jakobs Speiselokal</a></li>
 			<li><a href="https://t.me/einundzwanzigthueringen">Einundzwanzig Thüringen</a> an wechselnden Orten</li>
 			<li>Auch zu anderen Themen beim <a href="https://c3d2.de/space.html" target="_blank">Chaos Computer Club Dresden</a></li>
 			<li>Für solche mit robustem Magen: <a href="https://www.meetup.com/de-DE/BlockchainMeetupSaxony/" target="_blank">Blockchain Meetup Saxony</a></li>
-			<li><a href="https://www.meetup.com/de-DE/Bitcoin-Lab-Berlin/events/tmxjlsydcfbfb/" target="_blank">Berliner Bitcoin-Stammtisch</a>: <time datetime="DTSTART=20110714T190000Z;FREQ=MONTHLY;BYDAY=1WE;BYHOUR=19;BYMINUTE=0;BYSECOND=0">jeden 1. Donnerstag ab 19 Uhr</time> im <a href="https://www.friedelrichter.de/" target="_blank">Friedel Richter</a>, ggf. auch <a href="https://meet.fulmo.org/BitcoinStammtischBerlin" target="_blank">online</a></li>
+			<li><a href="https://www.meetup.com/de-DE/Bitcoin-Lab-Berlin/events/tmxjlsydcfbfb/" target="_blank">Berliner Bitcoin-Stammtisch</a>: <time class="rrule" datetime="DTSTART=20110714T190000Z;FREQ=MONTHLY;BYDAY=1WE;BYHOUR=19;BYMINUTE=0;BYSECOND=0">jeden 1. Donnerstag ab 19 Uhr</time> im <a href="https://www.friedelrichter.de/" target="_blank">Friedel Richter</a>, ggf. auch <a href="https://meet.fulmo.org/BitcoinStammtischBerlin" target="_blank">online</a></li>
 <!--
 			<li>Weitere Orte mit regelmäßgen Treffen auf der <a href="https://coinspondent.de/regelmaessige-bitcoin-treffen/" target="_blank">Liste des Coinspondent</a></li>
 -->
@@ -178,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			<li><a href="https://leo-mattes.com/pump-it-up/">Noch mehr Songs …</a></li>
 			<li><a href="https://josie.io/collections/original-paintings">J. Bellini</a> – Malerei</li>
 			<li><a href="https://thelittlehodler.com/">Lina Seiche</a> – Little Hodler Merch</li>
-			<li><a href="https://www.bitcoinapexart.com/">Bitcoin APEX Art</a> – unique Bitcoin graphite art – Daniel Kränkel Bleistiftzeichnungen</li>
+			<li><a href="https://www.bitcoinapexart.com/">Bitcoin Apex Art</a> – unique Bitcoin graphite art – Daniel Kränkel Bleistiftzeichnungen</li>
 			<li><a href="https://twitter.com/musikertreff">@Musikertreff</a>'s Honig: <a href="https://satoshistore.io/products/cyberbee-honey">bei SatoshiStore</a>, <a href="https://saltndaisy.at/">bei Salt'n Daisy</a> und Lieder: <a href="https://www.youtube.com/watch?v=YwY_oN-2C-M">Ois auf pump</a> (<a href="./lieder/600-Ois-auf-pump_de-en.pdf">Text</a>, <a href="./lieder/Musikertreff-OisAufPump.pdf">Noten</a>), <a href="https://www.youtube.com/watch?v=_S0ar6uCexs">Es is ah Traum</a> (<a href="./lieder/601-De-Loesung-fuer-Ois.pdf">Text</a>, <a href="./lieder/Musikertreff-EsIsAhTraum.pdf">Noten</a>)</li>
 		</ul>
 
