@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: https://ogp.me/ns#"><title>Bitcoin Dresden</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<meta name="robots" content="index"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:image" content="https://gitea.c3d2.de/xbtdd/graphics/raw/branch/main/round.svg"/>
+	<meta property="og:URL" content="http://bitcoin-dresden.de/"/>
+	<meta property="og:description" content="Erfahrungsaustausch zu Bitcoin in Dresden"/>
+	<link rel="stylesheet" href="btc-styles.css">
+	<style>
+del, s { text-decoration: line-through; }
+strong { font-weight: bold; }
+body { font-family: sans-serif; }
+body #wrap { margin: 0 auto; }
+fieldset { border-color: black;}
+@media only screen {
+	body { background-color: #2d2d2d; color: #f2a900; }
+	a:link { color: #c07900; }
+	a:visited { color: #e07960; }
+	a:hover,a:active { color: #4040f9; }
+}
+@media only screen and (max-width: 600px){
+	body #wrap { font-size: 2.1em; }
+}
+@media only screen and (min-width: 768px){
+	label { display:inline-block;width: 12ex; }
+	body #wrap { font-size: 1.2em; width: 80%; }
+}
+time { font-style: italic; }
+time.rrule { font-weight: bold; }
+	</style>
+<script type="module" src="./script/eventdate.js"></script>
+</head><body><div id="wrap" class="container">
+
+	<section id="kontakt">
+
+		<h3 id="kontakt">Kontakt</h3>
+		<p>Meldet euch bei Interesse an einem Treffen in der Stadt gerne hier. Vergesst nicht eine E-Mail oder einen anderen brauchbaren Kontakt anzugeben wenn ihr eine Antwort wünscht.</p>
+		<form method="post" action="http://btc.bplaced.net/msg.php">
+			<fieldset><legend>Nachricht</legend>
+			<label for="from">Absender</label><input type="text" name="from" id="from" value="" minlength="1" maxlength="50" required placeholder="Name <user@maildomain.tld>" style="width: 80%;" /><br />
+			<label for="subject">Betreff</label><input type="text" name="subject" id="subject" value="" minlength="0" maxlength="255" placeholder="Betreff" style="width: 80%;"/><br />
+			<label for="text">Nachricht</label><textarea name="text" id="text" cols="20" rows="7" wrap="soft" required placeholder="Deine Nachricht" style="width: 80%;"></textarea><br />
+			</fieldset>
+			<fieldset><legend>Captcha</legend>
+			<label for="answer">Stadt</label><input type="text" name="answer" id="answer" value="" maxlength="50" placeholder="Stadtname" required style="width: 80%;"/><br />
+			</fieldset>
+			<input type="submit" id="submit" value="senden" style="margin-left: 20ex;"/>
+		</form>
+
+	</section>
+
+</div></body></html>
