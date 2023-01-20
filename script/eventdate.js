@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var f = new Intl.DateTimeFormat("de-DE", { //timeZoneName: "short", second: "numeric" | day: "2-digit" 
 			 timeZone: "UTC", year: "numeric", month: "long", day: "numeric", weekday: "long", hour: "numeric", minute: "numeric" }).format(e).replace(' um ',' ab ');
 		//~ console.log(f);
-		tag.innerHTML = "nächster Termin am " + f + " Uhr";
-		var title = rule.toText().replace('every day','jeden Tag').replace('every week','jede Woche').replace('every month','jeden Monat').replace('every year','jedes Jahr').replace('on the','am').replace('Monday','Montag').replace('Tuesday','Dienstag').replace('Wednesday','Mittwoch').replace('Thursday','Donnerstag').replace('Friday','Freitag').replace('Saturday','Samstag').replace('Sunday','Sonntag').replace('2nd','zweiten').replace('1st','ersten').replace('3rd','dritten').replace('4th','vierten') + " " + f.substr(f.lastIndexOf('ab '));
+		tag.innerHTML = "nächster Termin planmäßig am " + f + " Uhr";
+		var title = rule.toText().replace('every day','jeden Tag').replace('every week','jede Woche').replace('every month','jeden Monat').replace('every year','jedes Jahr').replace('on the','planmäßig am').replace('Monday','Montag').replace('Tuesday','Dienstag').replace('Wednesday','Mittwoch').replace('Thursday','Donnerstag').replace('Friday','Freitag').replace('Saturday','Samstag').replace('Sunday','Sonntag').replace('2nd','zweiten').replace('1st','ersten').replace('3rd','dritten').replace('4th','vierten') + " " + f.substr(f.lastIndexOf('ab '));
 		//~ console.log(title);
 		tag.setAttribute('title', title);
 	}
