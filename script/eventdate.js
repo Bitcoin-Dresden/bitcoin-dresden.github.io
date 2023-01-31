@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	for(const tag of document.getElementsByClassName("rrule") ){
 		var now = new Date();
-		var rule = rrule.RRule.fromString(tag.getAttribute('datetime').toUpperCase());
+		var rule = rrule.RRule.fromString(tag.getAttribute('data-rrule').toUpperCase());
 		var e = rule.after(now);
 		tag.setAttribute('datetime', new Date(e - -now.getTimezoneOffset()*60000).toISOString());
 		var f = new Intl.DateTimeFormat("de-DE", { //timeZoneName: "short", second: "numeric" | day: "2-digit" 
