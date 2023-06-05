@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		if (tag.getAttribute('data-rrule') !== null) {
 			var rule = rrule.RRule.fromString(tag.getAttribute('data-rrule').toUpperCase());
 			var e = rule.after(now);
-			tag.setAttribute('datetime', new Date.UTC(e - -localTimeOffset).toISOString());
+			tag.setAttribute('datetime', new Date(e - -localTimeOffset).toISOString());
 			var f = new Intl.DateTimeFormat("de-DE", { //timeZoneName: "short", second: "numeric" | day: "2-digit" 
 				 timeZone: "UTC", year: "numeric", month: "long", day: "numeric", weekday: "long", hour: "numeric", minute: "numeric" }).format(e).replace(' um ',' ab ');
 			//~ console.log(f);
