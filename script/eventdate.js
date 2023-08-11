@@ -55,4 +55,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 	}
 
+	if( document.getElementsByTagName('time')[0].getAttribute('datetime') > document.getElementsByTagName('time')[1].getAttribute('datetime') ) {
+		document.getElementById('termin1').appendChild(document.getElementById('termin2').children[0]);
+		document.getElementById('termin2').appendChild(document.getElementById('termin1').children[0]);
+	}
+
 });
