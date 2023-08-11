@@ -37,6 +37,7 @@ var localTimeOffset=getCETorCESTDateOffset();
 
 document.addEventListener("DOMContentLoaded", function(event) { 
 
+	// update datetime for each time node with rrule
 	for(const tag of document.getElementsByTagName("time") ){
 		if (tag.getAttribute('data-rrule') !== null) {
 			var rule = rrule.RRule.fromString(tag.getAttribute('data-rrule').toUpperCase());
@@ -55,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 	}
 
+	// sort dates
 	if( document.getElementsByTagName('time')[0].getAttribute('datetime') > document.getElementsByTagName('time')[1].getAttribute('datetime') ) {
 		document.getElementById('termin1').appendChild(document.getElementById('termin2').children[0]);
 		document.getElementById('termin2').appendChild(document.getElementById('termin1').children[0]);
