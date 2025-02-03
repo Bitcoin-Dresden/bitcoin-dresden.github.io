@@ -86,3 +86,32 @@
     color: white;
     background-color: #6c757d;
 }
+section {
+    clear: both;
+}
+.orange{
+    color: #f2a900;
+}
+
+div.center {
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+    justify-content: center;
+    display: flex;
+}
+
+div.kurs {
+    font-weight: bold;
+    width: 20em;
+    text-align: center;
+    border: .3ex solid #f2a900;
+    margin: .2ex;
+    padding: .5ex;
+}
+div.kurs a {
+	display: inline-block;
+    font-size: 2em;
+    text-decoration: none;
+    margin-bottom: .2ex;
+}
