@@ -86,3 +86,27 @@
     color: white;
     background-color: #6c757d;
 }
+section {
+    clear: both;
+}
+.orange{
+    color: #f2a900;
+}
+
+ul.kurs {
+    color:white;
+}
+
+ul.kurs li {
+	font-weight: bold;
+    display:inline-block;
+    float:left;
+    width:20em;
+    text-align: center;
+    border: .3ex solid #f2a900;
+    margin: .2ex;
+    padding: .5ex;
+}
+ul.kurs li a {
+    font-size:2em;
+}
