@@ -93,20 +93,25 @@ section {
     color: #f2a900;
 }
 
-ul.kurs {
-    color:white;
+div.center {
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+    justify-content: center;
+    display: flex;
 }
 
-ul.kurs li {
-	font-weight: bold;
-    display:inline-block;
-    float:left;
-    width:20em;
+div.kurs {
+    font-weight: bold;
+    width: 20em;
     text-align: center;
     border: .3ex solid #f2a900;
     margin: .2ex;
     padding: .5ex;
 }
-ul.kurs li a {
-    font-size:2em;
+div.kurs a {
+	display: inline-block;
+    font-size: 2em;
+    text-decoration: none;
+    margin-bottom: .2ex;
 }
