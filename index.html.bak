@@ -11,7 +11,6 @@
 	<meta property="og:description" content="Erfahrungsaustausch zu Bitcoin in Dresden"/>
 	<!-- no favicon --><link rel="icon" href="data:,">
 	<meta name="lightning" content="lnurlp:spenden@bitcoin-dresden.de"/>
-	<link rel="alternate" type="text/calendar" title="Event Calendar" href="events.ics">
 	<link rel="stylesheet" href="btc-styles.css">
 	<style>
 del, s { text-decoration: line-through; }
@@ -44,7 +43,7 @@ time.rrule { font-weight: bold; }
 		<h1 id="bitcoin-dresden">Bitcoin Dresden</h1>
 
 		<h3 id="vor-und-nach-dem-stammtisch">Vor und nach dem Stammtisch</h3>
-		<p>Als ständige Austauschmöglichkeit zwischen den Treffen gibt es eine kleine <a href="https://t.me/BitcoinDresden" target="_blank">Gruppe auf Telegram</a> und den <a href="events.ics" rel="alternate" type="text/calendar" title="Event Calendar" download="download">Kalender Feed (iCal/ICS)</a>. S. a. <a href="https://c3d2.de/calendar.html">Kalender inkl. Feeds vom C3D2</a>. Alternativ gibt es auch Gruppen auf <a href="https://matrix.to/#/#bitcoindresden:matrix.org">Matrix</a> und <a href="https://simplex.chat/contact#/?v=2-7&smp=smp%3A%2F%2Fh--vW7ZSkXPeOUpfxlFGgauQmXNFOzGoizak7Ult7cw%3D%40smp15.simplex.im%2FVo6bfiY0rb-2IYx6R6R9LtkObbKguF0L%23%2F%3Fv%3D1-3%26dh%3DMCowBQYDK2VuAyEAoCKFTHTCgEdnvpm4IMwhRW7yc6yG8xsYHNkMRvwC1xI%253D%26srv%3Doauu4bgijybyhczbnxtlggo6hiubahmeutaqineuyy23aojpih3dajad.onion&data=%7B%22type%22%3A%22group%22%2C%22groupLinkId%22%3A%22falnhSgdHLTcP_lsP9DD3Q%3D%3D%22%7D">SimpleX</a>.</p>
+		<p>Als ständige Austauschmöglichkeit zwischen den Treffen gibt es eine kleine <a href="https://t.me/BitcoinDresden" target="_blank">Gruppe auf Telegram</a>. S. a. <a href="https://c3d2.de/calendar.html">Kalender inkl. Feeds vom C3D2</a>. Alternativ gibt es auch Gruppen auf <a href="https://matrix.to/#/#bitcoindresden:matrix.org">Matrix</a> und <a href="https://simplex.chat/contact#/?v=2-7&smp=smp%3A%2F%2Fh--vW7ZSkXPeOUpfxlFGgauQmXNFOzGoizak7Ult7cw%3D%40smp15.simplex.im%2FVo6bfiY0rb-2IYx6R6R9LtkObbKguF0L%23%2F%3Fv%3D1-3%26dh%3DMCowBQYDK2VuAyEAoCKFTHTCgEdnvpm4IMwhRW7yc6yG8xsYHNkMRvwC1xI%253D%26srv%3Doauu4bgijybyhczbnxtlggo6hiubahmeutaqineuyy23aojpih3dajad.onion&data=%7B%22type%22%3A%22group%22%2C%22groupLinkId%22%3A%22falnhSgdHLTcP_lsP9DD3Q%3D%3D%22%7D">SimpleX</a>.</p>
 
 		<h3 id="lokale-treffen">Geselliges Treffen von Bitcoinern</h3>
 <!--
@@ -60,15 +59,91 @@ time.rrule { font-weight: bold; }
 		Die Zeiten können variieren.
 		In ungeraden Monaten findet der Termin statt am 2. Donnerstag am 2. Mittwoch, im <a href="https://laviecoffee.de/">LaVie</a> ab 17:30 Uhr statt.
 		</p>
+		<ul><u>Konkrete Termine und Orte</u>:
+			<!--
+			<li><time datetime="2022-04-28T19:00:00+01:00">Do, 2022-04-28 ab 19 Uhr</time>, Stammtisch in <a href="https://www.openstreetmap.org/node/9174513637" target="_blank">Petzi's Sportsbar</a> (inkl. Free WIFI, ggf. Zahlung per Bitcoin via Lightning an den Wirt)</li>
+			<li><time datetime="2022-05-22">So, 2022-05-22 19:00</time>, Bitcoin Pizza Day. Wir treffen uns am Alaunplatz (Parkplatz für Food Trucks).</li>
+			<li><time datetime="2022-07-21T18:00:00+01:00">21. Juli 2022 ab 18 Uhr</time> Zur Abwechslung mal beim Großen Garten im <a href="https://www.paul-rackwitz.de/">Biergarten Rachwitz</a>.</li>
+			<li><time datetime="2022-11-10T18:00:00+01:00">10. November 2022 ab 19 Uhr</time> Zum ersten mal im <a href="https://www.openstreetmap.org/#map=19/51.06552/13.75709">Kelix</a> (Presseberichte: <a href="https://www.lust-auf-dresden.com/post/neuer%C3%B6ffnung-kelix-die-1-99-bar">1</a>, <a href="https://www.neustadt-ticker.de/186442/aktuell/zwei-neue-cafes-2">2</a>).</li>
+			<li><time datetime="2023-05-22">22. Mai 2023 ab 19:00 Uhr</time>, <a href="https://shop.freiheit.org/#!/Veranstaltung/G8VKI">Buchbesprechung mit Ijoma Mangold</a> im <a href="https://www.openstreetmap.org/relation/5651" target="_blank">Deutschen Hygiene-Museum</a></li>
+			<li><time datetime="2023-06-08">08. Juni 2023 ab 19:00 Uhr</time>, Vortrag zu Privacy im <a href="https://c3d2.de/space.html" target="_blank">Hackspace des Chaos Computer Club Dresden (C3D2)</a></li>
+			<li><time datetime="2023-07-13T19:00:00+02:00">13. Juli 2023 ab 19 Uhr</time> Treffen im <a href="https://www.openstreetmap.org/#map=19/51.07721/13.71611&layers=N">Pälzer Stubb</a> des <a href="https://www.pfaelzer-weinkontor-dresden.de/die-weinstube-paelzer-stubb/">Pfälzer Weinkontors</a></li>
+			<li><time datetime="2023-07-27T19:00:00+02:00">27. Juli 2023 ab 19 Uhr</time> in der <a href="https://www.saloppe.de/">Saloppe</a>, Brockhausstrasse 1, 01099 Dresden – vor 21:00 Uhr Eintritt frei!</li>
+			<li><time datetime="2023-08-10T19:00:00+02:00">10. August 2023 ab 19 Uhr</time> im <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2023-08-24T19:00:00+02:00">24. August 2023 ab 19 Uhr</time> im <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2023-09-14T19:00:00+02:00">14. September 2023 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2023-09-28T19:00:00+02:00">28. September 2023 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2023-10-12T19:00:00+02:00">12. Oktober 2023 ab 19 Uhr</time> – Kneipentour, Start: <a href="https://www.openstreetmap.org/node/67354286">Bottoms Up, Martin-Luther-Straße 31</a>, Updates in Chat &amp; Pad</li>
+			<li><time datetime="2023-10-26T19:00:00+02:00">26. Oktober 2023 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2023-11-09T19:00:00+01:00"> 9. November 2023 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2023-11-23T19:00:00+01:00">23. November 2023 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2023-12-08T17:00:00+01:00">8. Dezember 2023 17:00–20:00 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2023-12-14T19:00:00+01:00">14. Dezember 2023 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2023-12-28T16:00:00+01:00">28. Dezember 2023 ab 16 Uhr</time> <a href="https://www.alua.de/">Alua Café</a>, Schützenplatz 1, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-01-11T19:00:00+01:00">11. Januar 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-01-25T19:00:00+01:00">25. Januar 2024 ab 19 Uhr</time> Vortrag zu Anrgiffsmöglichkeiten auf Bitcoin und Kosten im <a href="https://c3d2.de/space.html" target="_blank">Hackspace des Chaos Computer Club Dresden (C3D2)</a></li>
+			<li><time datetime="2024-02-08T19:00:00+01:00">8. Februar 2024 ab 19 Uhr</time> Vortrag zu Seedmanagement und Privatsphäre im <a href="https://c3d2.de/space.html" target="_blank">Hackspace des Chaos Computer Club Dresden (C3D2)</a></li>
+			<li><time datetime="2024-02-22T19:00:00+01:00">22. Februar 2024 18:00–20:00 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-03-14T19:30:00+01:00">14. März 2024 ab 19:30 Uhr</time>  <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-03-28T19:00:00+01:00">28. März 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-04-11T19:00:00+02:00">11. April 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-04-20">~20. April 2024 Halving Party</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-04-25T19:00:00+02:00">25. April 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-05-09T14:00:00+02:00">9. Mai 2024 ab 14 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-05-23T19:00:00+02:00">23. Mai 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-06-13T19:00:00+02:00">13. Juni 2024 ab 19 Uhr</time>  <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-06-27T17:20:00+02:00">27. Juni 2024 ab 17:20 Uhr</time>  <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-07-11T19:00:00+02:00">11. Juli 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-07-25T19:00:00+02:00">25. Juli 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-08-08T19:00:00+02:00">8. August 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-08-22T19:00:00+02:00">22. August 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-09-12T17:30:00+02:00">12. September 2024 ab 17:30 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-09-26T17:30:00+02:00">26. September 2024 ab 19 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-10-10T19:00:00+02:00">10. Oktober 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-10-24T19:00:00+02:00">24. Oktober 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-11-14T17:30:00+01:00">14. November 2024 ab 17:30 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-11-28T19:00:00+01:00">28. November 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2024-12-12T19:00:00+01:00">12. Dezember 2024 ab 19 Uhr</time> Vortrag zum Orangepilling im <a href="https://c3d2.de/space.html" target="_blank">Hackspace des Chaos Computer Club Dresden (C3D2)</a></li>
+			<li><time datetime="2024-12-19T19:00:00+01:00">19. Dezember 2024 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-01-09T17:30:00+01:00">09. Januar 2025 ab 17:30 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-01-23T19:00:00+01:00">23. Januar 2025 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-02-13T19:00:00+01:00">13. Februar 2025 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-02-27T19:00:00+01:00">27. Februar 2025 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-02-28T19:00:00+01:00">28. Februar 2025 ab 19 Uhr</time> Vortrag zu Transaktionen auf Bitcoin und Einflussfaktoren im <a href="https://c3d2.de/space.html" target="_blank">Hackspace des Chaos Computer Club Dresden (C3D2)</a></li>
+			<li><time datetime="2025-03-13T17:30:00+01:00">13. März 2025 ab 17:30 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-03-27T19:00:00+01:00">27. März 2025 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-04-10T19:00:00+02:00">10. April 2025 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-04-24T19:00:00+02:00">24. April 2025 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-05-08T17:30:00+02:00">08. Mai 2025 ab 17:30 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-05-22T19:00:00+02:00">22. Mai 2025 ab 19 Uhr</time> Bitcoin Pizzaday, teils <a href="https://portal.einundzwanzig.space/de/meetup/bitcoin-goerlitz?l=de">mit den Görlitzern (ab 17&nbsp;Uhr <a href="https://www.johnnys-pizza.de/">bei <em>Johnny's Pizza</em></a>, Ermäßigung bei Zahlung via Lightning)</a> und ggf. finden sich einzelne andernorts ein.</li>
+			<li><time datetime="2025-06-12T19:00:00+02:00">12. Juni 2025 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-06-26T19:00:00+02:00">26. Juni 2025 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-07-10T19:00:00+02:00">10. Juli 2025 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-07-24T19:00:00+02:00">24. Juli 2025 ab 19 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
+			<li><time datetime="2025-08-06T17:30:00+02:00">6. August 2025 ab 17:30 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-08-14T19:00:00+02:00">14. August 2025 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-08-28T19:00:00+02:00">28. August 2025 ab 19 Uhr</time> <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b, 01307 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-09-10T17:30:00+02:00">10. September 2025 ab 17:30 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+-->
+			<li><time datetime="2025-09-25T19:00:00+02:00">25. September 2025 ab 19 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
+			<li><time datetime="2025-10-13T19:00:00+02:00">13. Oktober 2025 ab 19 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
+			<li><time datetime="2025-10-27T19:00:00+02:00">27. Oktober 2025 ab 19 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
+			<li><time datetime="2025-11-12T17:30:00+02:00">12. Novemver 2025 ab 17:30 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2025-11-27T19:00:00+01:00">27. Novemver 2025 ab 19 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
+<!--
+			<li><time datetime="2025-12-11T19:00:00+01:00">11. Dezember 2025 ab 19 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
+			<li><time datetime="2025-12-18T19:00:00+01:00">18. Dezember 2025 ab 19 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
 
-<ul><u>Konkrete Termine und Orte</u>
-<li><strong><time datetime="2025-09-25T19:00:00+02:00">25.09.2025 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt, Käthe-Kollwitz-Ufer 23b, 01307 Dresden</a></li>
-<li><strong><time datetime="2025-10-13T19:00:00+02:00">13.10.2025 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im Ort wird noch im Chat abgestimmt</li>
-<li><strong><time datetime="2025-10-27T19:00:00+01:00">27.10.2025 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im Ort wird noch im Chat abgestimmt</li>
-<li><strong><time datetime="2025-11-12T17:30:00+01:00">12.11.2025 ab 17:30 Uhr</time></strong> Bitcoin Stammtisch Dresden im <a href="https://laviecoffee.de/">LaVie Coffee, Wallstraße 11, 01067 Dresden</a></li>
-<li><strong><time datetime="2025-11-27T19:00:00+01:00">27.11.2025 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im Ort wird noch im Chat abgestimmt</li>
-<li><strong><time datetime="2025-12-11T19:00:00+01:00">11.12.2025 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im Ort wird noch im Chat abgestimmt</li>
-</ul>
+			<li><time datetime="2026-01-07T19:00:00+01:00">7. Januar 2026 ab 19 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2026-01-22T17:30:00+01:00">22. Januar 2026 ab 17:30 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
+			<li><time datetime="2026-02-11T19:00:00+01:00">12. Februar 2026 ab 19 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
+			<li><time datetime="2026-02-18T19:00:00+01:00">26. Februar 2026 ab 19 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
+			<li><time datetime="2026-03-11T17:30:00+01:00">12. März 2026 ab 17:30 Uhr</time> <a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11, 01067 Dresden – hier wird Bitcoin per Lightning direkt akzeptiert!</li>
+			<li><time datetime="2026-03-26T19:00:00+01:00">26. März 2026 ab 19 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
+			<li><time datetime="2026-04-09T19:00:00+02:00">09. April 2026 ab 19 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
+			<li><time datetime="2026-04-23T19:00:00+02:00">23. April 2026 ab 19 Uhr</time> – Ort wird noch im Chat abgestimmt</li>
+-->
+		</ul>
 		
 		<p>Manche/r findet sich auch bei weiteren Gruppen ein:</p>
 		<ul>
@@ -297,4 +372,3 @@ time.rrule { font-weight: bold; }
 		<p>Das ggf. zu sehende Bitcoin Lightning Logo von <a href="https://github.com/capitalistdog" target="_blank">@Capitalistdog1</a> findet ihr in <a href="https://github.com/shocknet/bitcoin-lightning-logo" target="_blank">diesem Repository</a>.</p>
 	</section>
 </div></body></html>
-

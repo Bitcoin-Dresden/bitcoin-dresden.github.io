@@ -1,74 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head prefix="og: https://ogp.me/ns#"><title>Bitcoin Dresden</title>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-	<meta name="robots" content="index"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:type" content="website"/>
-	<meta property="og:image" content="https://gitea.c3d2.de/xbtdd/graphics/raw/branch/main/round.svg"/>
-	<meta property="og:URL" content="https://bitcoin-dresden.de/"/>
-	<meta property="og:description" content="Erfahrungsaustausch zu Bitcoin in Dresden"/>
-	<!-- no favicon --><link rel="icon" href="data:,">
-	<meta name="lightning" content="lnurlp:spenden@bitcoin-dresden.de"/>
-	<link rel="alternate" type="text/calendar" title="Event Calendar" href="events.ics">
-	<link rel="stylesheet" href="btc-styles.css">
-	<style>
-del, s { text-decoration: line-through; }
-strong { font-weight: bold; }
-body { font-family: sans-serif; }
-body #wrap { margin: 0 auto; }
-fieldset { border-color: black;}
-@media only screen {
-	body { background-color: #2d2d2d; color: #f2a900; }
-	a:link, a:visited { color: #c07900; }
-	a:hover,a:active { color: #4040f9; }
-    div.kurs a:hover,div.kurs a:visited { color: #f2a900 !important;}
-}
-@media only screen and (max-width: 600px){
-	body #wrap { font-size: 1.4em; }
-}
-@media only screen and (min-width: 768px){
-	label { display:inline-block;width: 12ex; }
-	body #wrap { font-size: 1.5em; width: 80%; }
-}
-time { font-style: italic; }
-time.rrule { font-weight: bold; }
-	</style>
-<script type="module" src="./script/eventdate.js"></script>
-</head><body><div id="wrap" class="container">
-	<noscript>JavaScript ist deaktiviert, dadurch wird beispielsweise nicht das nächste Datum der Events berechnet, sondern bleibt allgemein beschrieben.</noscript>
-	<div><span style="float: right;" class="icon-Bitcoin-Lightning-White-Gold-Rounded icon-7x"></span></div>
-	<section>
-
-		<h1 id="bitcoin-dresden">Bitcoin Dresden</h1>
-
-		<h3 id="vor-und-nach-dem-stammtisch">Vor und nach dem Stammtisch</h3>
-		<p>Als ständige Austauschmöglichkeit zwischen den Treffen gibt es eine kleine <a href="https://t.me/BitcoinDresden" target="_blank">Gruppe auf Telegram</a> und den <a href="events.ics" rel="alternate" type="text/calendar" title="Event Calendar" download="download">Kalender Feed (iCal/ICS)</a>. S. a. <a href="https://c3d2.de/calendar.html">Kalender inkl. Feeds vom C3D2</a>. Alternativ gibt es auch Gruppen auf <a href="https://matrix.to/#/#bitcoindresden:matrix.org">Matrix</a> und <a href="https://simplex.chat/contact#/?v=2-7&smp=smp%3A%2F%2Fh--vW7ZSkXPeOUpfxlFGgauQmXNFOzGoizak7Ult7cw%3D%40smp15.simplex.im%2FVo6bfiY0rb-2IYx6R6R9LtkObbKguF0L%23%2F%3Fv%3D1-3%26dh%3DMCowBQYDK2VuAyEAoCKFTHTCgEdnvpm4IMwhRW7yc6yG8xsYHNkMRvwC1xI%253D%26srv%3Doauu4bgijybyhczbnxtlggo6hiubahmeutaqineuyy23aojpih3dajad.onion&data=%7B%22type%22%3A%22group%22%2C%22groupLinkId%22%3A%22falnhSgdHLTcP_lsP9DD3Q%3D%3D%22%7D">SimpleX</a>.</p>
-
-		<h3 id="lokale-treffen">Geselliges Treffen von Bitcoinern</h3>
-<!--
-		<p><strong>
-			Das nächste Außerplanmäßige Treffen: <time datetime="">8. Dezember 2023 ab 17:00 Uhr im LaVie Coffee, Wallstraße 11, 01067 Dresden.</time>
-		</strong></p>
--->
-		<p>
-		Thema ist alles um Bitcoin außer Wechselkurse.
-		Nächste planmäßige Termine <span id="termin1"><time data-rrule="DTSTART=20221110T170000Z;FREQ=MONTHLY;BYDAY=2TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0" datetime="">an jedem 2. Donnerstag des Monats</time></span>
-		sowie <span id="termin2"><time data-rrule="DTSTART=20230727T170000Z;FREQ=MONTHLY;BYDAY=4TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0" datetime="">jedem 4. Donnerstag des Monats</time></span>
-		ab 19 Uhr.
-		Die Zeiten können variieren.
-		In ungeraden Monaten findet der Termin statt am 2. Donnerstag am 2. Mittwoch, im <a href="https://laviecoffee.de/">LaVie</a> ab 17:30 Uhr statt.
-		</p>
-
-<ul><u>Konkrete Termine und Orte</u>
-<li><strong><time datetime="2025-09-25T19:00:00+02:00">25.09.2025 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt, Käthe-Kollwitz-Ufer 23b, 01307 Dresden</a></li>
-<li><strong><time datetime="2025-10-13T19:00:00+02:00">13.10.2025 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im Ort wird noch im Chat abgestimmt</li>
-<li><strong><time datetime="2025-10-27T19:00:00+01:00">27.10.2025 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im Ort wird noch im Chat abgestimmt</li>
-<li><strong><time datetime="2025-11-12T17:30:00+01:00">12.11.2025 ab 17:30 Uhr</time></strong> Bitcoin Stammtisch Dresden im <a href="https://laviecoffee.de/">LaVie Coffee, Wallstraße 11, 01067 Dresden</a></li>
-<li><strong><time datetime="2025-11-27T19:00:00+01:00">27.11.2025 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im Ort wird noch im Chat abgestimmt</li>
-<li><strong><time datetime="2025-12-11T19:00:00+01:00">11.12.2025 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im Ort wird noch im Chat abgestimmt</li>
-</ul>
 		
 		<p>Manche/r findet sich auch bei weiteren Gruppen ein:</p>
 		<ul>
@@ -297,4 +226,3 @@ time.rrule { font-weight: bold; }
 		<p>Das ggf. zu sehende Bitcoin Lightning Logo von <a href="https://github.com/capitalistdog" target="_blank">@Capitalistdog1</a> findet ihr in <a href="https://github.com/shocknet/bitcoin-lightning-logo" target="_blank">diesem Repository</a>.</p>
 	</section>
 </div></body></html>
-

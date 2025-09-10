@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:ics.py - http://git.io/lLljaA
+BEGIN:VEVENT
+DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: LaVie Coffee\, Wallstraße 11\, 01067 Dresden (Website zur Location: https://laviecoffee.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
+LOCATION:LaVie Coffee\, Wallstraße 11\, 01067 Dresden
+DTSTART:20251112T163000Z
+SUMMARY:Bitcoin Stammtisch Dresden
+UID:d9189c1d-cf72-43bc-8f65-7a8fe0d62963@d918.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Ort wird noch im Chat abgestimmt\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
+LOCATION:Ort wird noch im Chat abgestimmt
+DTSTART:20251027T180000Z
+SUMMARY:Bitcoin Stammtisch Dresden
+UID:58003416-d557-40aa-bbeb-967854104a24@5800.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Ort wird noch im Chat abgestimmt\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
+LOCATION:Ort wird noch im Chat abgestimmt
+DTSTART:20251211T180000Z
+SUMMARY:Bitcoin Stammtisch Dresden
+UID:7d2b1edb-df87-431a-8d6f-c97deb00f5ca@7d2b.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Ort wird noch im Chat abgestimmt\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
+LOCATION:Ort wird noch im Chat abgestimmt
+DTSTART:20251127T180000Z
+SUMMARY:Bitcoin Stammtisch Dresden
+UID:2b638b14-276f-480d-9b29-c8f9519fb698@2b63.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden (Website zur Location: https://www.faehrgarten.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
+LOCATION:Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden
+DTSTART:20250925T170000Z
+SUMMARY:Bitcoin Stammtisch Dresden
+UID:4b58f32e-fb73-4692-b08d-f9209241375c@4b58.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Ort wird noch im Chat abgestimmt\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
+LOCATION:Ort wird noch im Chat abgestimmt
+DTSTART:20251013T170000Z
+SUMMARY:Bitcoin Stammtisch Dresden
+UID:6a37792b-55e7-47ce-9540-197c6e61283e@6a37.org
+END:VEVENT
+END:VCALENDAR
