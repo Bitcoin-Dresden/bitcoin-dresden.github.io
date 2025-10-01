@@ -7,7 +7,7 @@
     font-display: block;
 }
 
-.inline-icon {
+.inline-icon, .inline-icon img {
   display: inline-block;
   height: 1em;
   width: auto;
