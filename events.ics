@@ -4,36 +4,29 @@ PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden (Website zur Location: https://www.faehrgarten.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden
-DTSTART:20251009T170000Z
-SUMMARY:Bitcoin Stammtisch Dresden
-UID:0ba96a1c-988d-4b39-94d9-8a3a414ad689@0ba9.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden (Website zur Location: https://www.faehrgarten.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
-LOCATION:Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden
 DTSTART:20251023T180000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:63638ba0-2cf3-4de8-8e9b-f4d4ddd1b46a@6363.org
+UID:6aae509b-bd53-4ead-8b71-d88e3ce021dc@6aae.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: LaVie Coffee\, Wallstraße 11\, 01067 Dresden (Website zur Location: https://laviecoffee.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:LaVie Coffee\, Wallstraße 11\, 01067 Dresden
 DTSTART:20251112T163000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:461ad6af-00ae-4272-90a6-fa93c654d4ac@461a.org
+UID:e8de89da-ba43-4b26-a9c8-e216033b9318@e8de.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Ort wird noch im Chat abgestimmt\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:Ort wird noch im Chat abgestimmt
 DTSTART:20251211T180000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:40c8c00f-af24-4b05-9fa2-3be3bfc557a4@40c8.org
+UID:56bfe22d-4388-4961-bb3a-cba19682acd7@56bf.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Ort wird noch im Chat abgestimmt\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:Ort wird noch im Chat abgestimmt
 DTSTART:20251127T180000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:b65dd588-e9c5-4366-996e-4ebf79bde309@b65d.org
+UID:5d225083-15f0-4f28-baee-787d6f0bd675@5d22.org
 END:VEVENT
 END:VCALENDAR
