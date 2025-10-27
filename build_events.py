@@ -25,8 +25,8 @@ def main():
                 continue
             dt = datetime.fromisoformat(row["Datetime"])
 
-            # Skip past events
-            if dt < now:
+            # Skip past events only after month is over
+            if dt.month < ( now.month + (now.year - dt.year) * 12 ):
                 continue
 
             duration = row["Duration"].strip() if row["Duration"] else ""
@@ -86,12 +86,15 @@ def main():
                 f'<time datetime="{dt_iso}">{dt_hr}</time>'
             )
 
-            events_html.append(
-                f"<li><strong>{dt_html}</strong> {html.escape(desc)}"
-                + (f": {topic_html}" if topic_html else "")
-                + (f" im {loc_html}" if loc_html else "")
-                + "</li>"
-            )
+            # for HTML print events not apparent yet
+            if dt > now:
+
+                events_html.append(
+                    f"<li><strong>{dt_html}</strong> {html.escape(desc)}"
+                    + (f": {topic_html}" if topic_html else "")
+                    + (f" im {loc_html}" if loc_html else "")
+                    + "</li>"
+                )
 
     # Write .ics
     Path(ICS_FILE).parent.mkdir(parents=True, exist_ok=True)
