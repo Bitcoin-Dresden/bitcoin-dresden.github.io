@@ -4,60 +4,60 @@ PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden (Website zur Location: https://www.faehrgarten.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden
-DTSTART:20251211T180000Z
+DTSTART:20260122T180000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:7c51db53-a9e5-4fd6-a3c1-7f8be8d77494@7c51.org
+UID:b6b9cdb0-74d4-423f-b230-557f6cdaa306@b6b9.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Bitcoin Dresden Website: https://bitcoin-dresden.de/
+DTSTART:20260212T180000Z
+UID:f142a4a6-3462-4268-8f3d-ff0351f6cb68@f142.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden (Website zur Location: https://www.faehrgarten.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden
 DTSTART:20251127T180000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:0e1899e7-6e24-46df-94ee-cdf79256b898@0e18.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Bitcoin Dresden Website: https://bitcoin-dresden.de/
-DTSTART:20260212T180000Z
-UID:80dfb30a-7b80-4f5e-ada3-7cff09640f09@80df.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Bitcoin Dresden Website: https://bitcoin-dresden.de/
-DTSTART:20260216T180000Z
-UID:93b66d8f-c7da-4013-912e-8e62943fee59@93b6.org
+UID:d4e990bc-1c28-4e6f-aba1-b331393f2b10@d4e9.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden (Website zur Location: https://www.faehrgarten.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden
-DTSTART:20260122T180000Z
+DTSTART:20251211T180000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:bcdf6061-62dd-4ca0-9538-0a6fa3d363e7@bcdf.org
+UID:1b8cedf6-8046-484b-9941-f9a9d056cd89@1b8c.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: LaVie Coffee\, Wallstraße 11\, 01067 Dresden (Website zur Location: https://laviecoffee.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:LaVie Coffee\, Wallstraße 11\, 01067 Dresden
 DTSTART:20260114T163000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:a23268a5-58ac-44a2-87af-58541749440e@a232.org
+UID:d105465a-4158-4d51-bc44-21436b018548@d105.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden (Website zur Location: https://www.faehrgarten.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden
 DTSTART:20251023T180000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:5a86056a-c7bb-401c-91ed-733166ee94a8@5a86.org
+UID:c8cf925f-a841-48bc-8211-c8e658555dda@c8cf.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Bitcoin Dresden Website: https://bitcoin-dresden.de/
+DTSTART:20260216T180000Z
+UID:6d3a47d3-4db3-475d-a92f-f4e10e75a8c7@6d3a.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden (Website zur Location: https://www.faehrgarten.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden
 DTSTART:20251009T170000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:3b8f55a1-1ab8-4977-86be-a059e3587bdd@3b8f.org
+UID:15d2bf93-196e-4fc3-b46d-b19e70d6a595@15d2.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: LaVie Coffee\, Wallstraße 11\, 01067 Dresden (Website zur Location: https://laviecoffee.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:LaVie Coffee\, Wallstraße 11\, 01067 Dresden
 DTSTART:20251112T163000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:6646850e-a3c5-44f9-8f48-68b9863a7bbd@6646.org
+UID:9e8016de-c938-4a25-978b-348faf688fe8@9e80.org
 END:VEVENT
 END:VCALENDAR

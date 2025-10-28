@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	// update datetime for each time node with rrule
 	for(const tag of document.getElementsByTagName("time") ){
 		if (tag.getAttribute('data-rrule') !== null) {
-			var rule = rrule.RRule.fromString(tag.getAttribute('data-rrule').toUpperCase().replace('|',"\n"));
+			var rule = rrule.RRule.fromString(tag.getAttribute('data-rrule').toUpperCase());
 			var e = rule.after(now);
 			tag.setAttribute('datetime', new Date(e - -localTimeOffset).toISOString());
 			var f = new Intl.DateTimeFormat("de-DE", { //timeZoneName: "short", second: "numeric" | day: "2-digit" 
