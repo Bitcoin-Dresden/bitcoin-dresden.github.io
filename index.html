@@ -54,7 +54,7 @@ time.rrule { font-weight: bold; }
 -->
 		<p>
 		Thema ist alles um Bitcoin außer Wechselkurse.
-		Nächste planmäßige Termine <span id="termin1"><time data-rrule="DTSTART=20221110T170000Z;FREQ=MONTHLY;BYDAY=2TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0" datetime="">an jedem 2. Donnerstag des Monats</time></span>
+		Nächste planmäßige Termine <span id="termin1"><time data-rrule="DTSTART=20221110T170000Z;RRULE:FREQ=MONTHLY;BYMONTH=2,4,6,8,10,12;BYDAY=2TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0;RRULE:FREQ=MONTHLY;BYMONTH=1,3,5,7,9,11;BYDAY=2WE;BYHOUR=17;BYMINUTE=30;BYSECOND=0" datetime="">an jedem 2. Donnerstag ab 19:00 Uhr in geraden Monaten / jedem 2. Mittwoch ab 17:30 Uhr in ungeraden Monate</time></span>
 		sowie <span id="termin2"><time data-rrule="DTSTART=20230727T170000Z;FREQ=MONTHLY;BYDAY=4TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0" datetime="">jedem 4. Donnerstag des Monats</time></span>
 		ab 19 Uhr.
 		Die Zeiten können variieren.
@@ -231,7 +231,7 @@ time.rrule { font-weight: bold; }
 			<li><a href="https://isbn.de/titel/suche/die+orange+pille+Warum+Bitcoin+weit+mehr+als+nur+ein+neues+Geld+ist">Die orange Pille: Warum Bitcoin weit mehr als nur ein neues Geld ist</a></li>
 			<li><a href="https://web.archive.org/web/20220525162530/https://danielsan.keybase.pub/reading/Cryptoasset-Inheritance-Planning_-A-Simple-Guide-for-Owners_compressed.pdf?dl=0" target="_blank">Cryptoasset Inheritance Planning</a></li>
 			<li><a href="https://marcsteiner.tech/bitcoins-vererben-buch" target="_blank">Bitcoin<del>s</del> verwahren und vererben</a> und das zugehörige <a href="https://marcsteiner.tech/bitcoin-nachlass-tool" target="_blank">Tool</a></li>
-			<li>Ein paar mehr über die Verlage <a href="https://aprycot.media/" target="_blank">Aprycot Media</a> oder <a href="https://bitcoinbook.shop/">Konsensus Network</a></li>
+			<li>Viele mehr über die Verlage <a href="https://aprycot.media/" target="_blank">Aprycot Media</a> oder <a href="https://bitcoinbook.shop/">Konsensus Network</a></li>
 			<li><a href="https://www.isbn.de/buch/9789949742981_bitcoin-begreifen.htm">Bitcoin begreifen von Kalle Rosenbaum</a></li>
 			<li>Für Steuerberater und Menschen die Buchführung interessiert… <a href="https://isbn.de/9783503191536">Bitcoin und andere Kryptowährungen (currency token) - Grundlagen der Besteuerung im Privat- und im Betriebsvermögen</a>, als PDF (inkl. DRM) auch in Biblioheken wie der <a href="https://www.slub-dresden.de/">SLUB Dresden</a>.</li>
 		</ul>
@@ -261,10 +261,11 @@ time.rrule { font-weight: bold; }
 		<h3 id="hardware">Hardware &amp; Backup-Lösungen</h3>
 		<ul>
 			<li><a href="https://seedsigner.com/">SeedSigner</a></li>
+			<li><a href="https://specter.solutions/">Specter</a></li>
 			<li>Blockstream Jade <a href="https://github.com/Blockstream/Jade">DIY</a> und <a href="https://store.blockstream.com/product-category/physical_storage/">fertig</a></li>
 			<li><a href="https://bitbox.shop/">Bitbox</a> – Rabatt-Codes: <code>EINUNDZWANZIG</code>, <code>EINUNDZWANZIG10</code></li>
-			<li><a href="https://tinyseed.io/">Tinyseed</a></li>
-			<li>Vulcan's Steel-QR bei <a href="https://www.gobrrr.me/shop/cold-storage/">GoBrrr</a> und <a href="https://copiaro.de/en/category/all-brands-manufacturers/vulcan-en/">Copiaro</a></li>
+			<li>Kompaktes Backup in Titanium <a href="https://tinyseed.io/">Tinyseed</a></li>
+			<li>Vulcan's Steel-QR bei <a href="https://www.gobrrr.me/shop/cold-storage/">GoBrrr</a></li>
 			<li><a href="https://raspiblitz.org/">RaspiBlitz</a></li>
 			<li>Verschiedenes auch bei <a href="https://satoshistore.io/collections/wallet-backup">SatoshiStore</a></li>
 		</ul>
@@ -277,18 +278,26 @@ time.rrule { font-weight: bold; }
 			<li><a href="https://vexl.it/">Vexl</a> – App zum Handeln beliebiger Güter und Leistungen für Sats</li>
 			<li><a href="https://satoshiskleinanzeigen.space/">Satoshis Kleinanzeigen</a> – Webkatalog für alles für Sats</li>
 			<li><a href="https://plebeian.market/">Plebeian Market</a> – Marktplatz auf <a href="https://nostr.com/">Nostr</a></li>
+			<li><a href="https://lnp2pbot.com/">LNp2pBot</a>: Sats mit Lightning über Grenzen hinweg handeln</li>
+			<li><a href="https://peachbitcoin.com/de/">Peach</a>: Bitcoin (nur onchain) leicht über eine App p2p handeln</li>
 		</ul>
 
 		<h3 id="cashbach-online-shopping">Cashback / Online Shopping</h3>
 		<ul>
-			<li><a href="https://stekking.com/">Stekking</a></li>
-			<li><a href="https://www.shoop.de/">Shoop</a></li>
 			<li><a href="https://satsback.com/">Satsback</a></li>
 			<li>Breites Angebot und Concierge-Service bei <a href="https://shopinbit.com/">SHOPINBIT</a></li>
-			<li><a href="https://www.satoshiskleinanzeigen.space/">Satoshis Kleinanzeigen</a></li>
-			<li><a href="https://www.bitrefill.com/">Bitrefill</a>: Gutscheine/Codes für viele Geschäfte, Services und Prepaid-Kreditkarten</li>
+			<li><a href="https://www.bitrefill.com/">Bitrefill</a>: Gutscheine/Codes für viele Geschäfte, Services</li>
 			<li><a href="https://www.coinsbee.com/">coinsbee</a>: Gutscheine/Codes</li>
 			<li><a href="https://keys4coins.com/">keys4coins</a>: Lizenzschlüssel und Gutscheine für insb. Spieleplattformen</li>
+			<li><a href="https://stekking.com/">Stekking</a></li>
+			<li><a href="https://www.shoop.de/">Shoop</a></li>
+		</ul>
+		
+		<h3 id="kyc-payment">KYC Zahlung und Handel</h3>
+		<ul>
+			<li>Handel und Kreditkarte <a href="https://bringin.xyz/">bringin</a></li>
+			<li><a href="https://www.bitrefill.com/">Bitrefill</a>: Prepaid-Kreditkarten neben Gutscheinen/Codes für viele Geschäfte, Services</li>
+			<li><a href="https://kraken.com/">kraken</a> günstige Börse mit API für <a href="https://github.com/dennisreimann/stacking-sats-kraken">DCA auf der eigenen Node</a></li>
 		</ul>
 	</section>
 
