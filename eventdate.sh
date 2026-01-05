@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# nth_weekday.sh - Berechnet den N-ten Wochentag eines Monats
+# eventdate.sh - Berechnet den N-ten Wochentag eines Monats
 # POSIX-kompatibel, GNU date erforderlich
 
 # Abhängigkeiten prüfen
@@ -27,27 +27,36 @@ check_dst() {
     esac
 }
 
-nth_weekday() {
+eventdate() {
     YEAR=$1
     MONTH=$2
     N=$3
     WEEKDAY=$4
 
-    # 1. Tag des Monats
-    FIRST_DAY=$(date -d "$YEAR-$MONTH-01" +%w)
-
-    # Differenz zum gesuchten Wochentag
-    DIFF=$(( (WEEKDAY - FIRST_DAY + 7) % 7 ))
-
-    # Tag des N-ten Wochentags
-    DAY=$(( 1 + DIFF + (N - 1) * 7 ))
+    if test "$N" -gt 0; then 
+        # 1. Tag des Monats
+        FIRST_DAY=$(date -d "$YEAR-$MONTH-01" +%w)
+	    
+        # Differenz zum gesuchten Wochentag
+        DIFF=$(( (WEEKDAY - FIRST_DAY + 7) % 7 ))
+	    
+        # Tag des N-ten Wochentags
+        DAY=$(( 1 + DIFF + (N - 1) * 7 ))
+    elif test "$N" -eq 0; then
+        printf "error: 0 is invalid.\n"; exit 1;
+    else
+        LAST_DAY_OF_MONTH=$(date -d "$YEAR-$MONTH-01 +1 month -1 day" +%d)
+        LAST_WEEKDAY=$(date -d "$YEAR-$MONTH-$LAST_DAY_OF_MONTH" +%w)
+        DIFF=$(( (LAST_WEEKDAY - WEEKDAY + 7) % 7 ))
+        DAY=$(( LAST_DAY_OF_MONTH - DIFF + (N + 1) * 7 ))
+    fi
 	
     # Ausgabe im Format YYYY-MM-DD
     printf "%04d-%02d-%02d\n" "$YEAR" "$MONTH" "$DAY"
 }
 
 icsdate(){
-	if [ $# -lt 4 ]; then >&2 printf "icsdate() has too few parameters: $@\n"; exit 1; else d=$(nth_weekday $1 $2 $3 $4); fi
+	if [ $# -lt 4 ]; then >&2 printf "icsdate() has too few parameters: $@\n"; exit 1; else d=$(eventdate $1 $2 $3 $4); fi
 	if [ -z "$5" ]; then t=""; else t="$5"; fi
 	if [ -z "$6" ]; then n=""; else n="||$6||||"; fi
 	z=$(check_dst "$d")
@@ -58,12 +67,12 @@ icsdate(){
 show_help() {
     cat <<'EOF'
 NAME
-    nth_weekday.sh - Berechnet den N-ten Wochentag eines Monats
+    eventdate.sh - Berechnet den N-ten Wochentag eines Monats
 
 SYNOPSIS
-    ./nth_weekday.sh JAHR MONAT N Wochentag
-    ./nth_weekday.sh test
-    ./nth_weekday.sh help
+    ./eventdate.sh JAHR MONAT N Wochentag
+    ./eventdate.sh test
+    ./eventdate.sh help
 
 BESCHREIBUNG
     Gibt das Datum des N-ten Vorkommens eines bestimmten Wochentags
@@ -80,10 +89,10 @@ SPEZIALPARAMETER
     help        Zeigt diese Hilfe an
 
 BEISPIELE
-    ./nth_weekday.sh 2025 1 2 3
+    ./eventdate.sh 2025 1 2 3
         → 2. Mittwoch im Januar 2025 → 2025-01-08
 
-    ./nth_weekday.sh 2025 12 4 4
+    ./eventdate.sh 2025 12 4 4
         → 4. Donnerstag im Dezember 2025 → 2025-12-25
 
 EOF
@@ -101,11 +110,13 @@ if [ "$1" = "test" ]; then
 2025 12 4 4 2025-12-25
 2023 3 1 0 2023-03-05
 2024 2 3 5 2024-02-16
+2026 1 -1 4 2026-01-29
+2024 12 -1 1 2024-12-30
 "
 
     all_ok=1
     printf "$tests\n" | while read YEAR MONTH N WEEKDAY EXPECTED; do
-        result=$(nth_weekday "$YEAR" "$MONTH" "$N" "$WEEKDAY")
+        result=$(eventdate "$YEAR" "$MONTH" "$N" "$WEEKDAY")
         if [ "$result" = "$EXPECTED" ]; then
             >&2 printf "PASS: %d-%d-%d %d → %s\n" "$YEAR" "$MONTH" "$N" "$WEEKDAY" "$result"
         else
@@ -151,8 +162,8 @@ if [ "$1" = "xbtdd" ]; then
 fi
 
 if [ $# -ne 4 ]; then
-    >&2 printf "Falsche Anzahl an Parametern. Verwenden Sie './nth_weekday.sh help' für Hilfe.\n"
+    >&2 printf "Falsche Anzahl an Parametern. Verwenden Sie './eventdate.sh help' für Hilfe.\n"
     exit 1
 fi
 
-nth_weekday "$1" "$2" "$3" "$4"
+eventdate "$1" "$2" "$3" "$4"
