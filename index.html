@@ -1,334 +1,928 @@
 <!DOCTYPE html>
-<html lang="de" prefix="og: https://ogp.me/ns#">
-<head><title>Bitcoin Dresden</title>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-	<meta name="robots" content="index"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:type" content="website"/>
-	<meta property="og:image" content="https://gitea.c3d2.de/xbtdd/graphics/raw/branch/main/round.svg"/>
-	<meta property="og:URL" content="https://bitcoin-dresden.de/"/>
-	<meta property="og:description" content="Erfahrungsaustausch zu Bitcoin in Dresden"/>
-	<!-- no favicon --><link rel="icon" href="data:,">
-	<meta name="lightning" content="lnurlp:spenden@bitcoin-dresden.de"/>
-	<link rel="alternate" type="text/calendar" title="Event Calendar" href="events.ics">
-	<link rel="stylesheet" href="btc-styles.css">
-	<style>
-del, s { text-decoration: line-through; }
-strong { font-weight: bold; }
-body { font-family: sans-serif; }
-body #wrap { margin: 0 auto; }
-fieldset { border-color: black;}
-@media only screen {
-	body { background-color: #2d2d2d; color: #f2a900; }
-	a:link, a:visited { color: #c07900; }
-	a:hover,a:active { color: #4040f9; }
-    div.kurs a:hover,div.kurs a:visited { color: #f2a900 !important;}
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bitcoin Dresden – Erfahrungsaustausch zu Bitcoin in Dresden</title>
+<meta name="description" content="Bitcoin Community in Dresden – Stammtisch, Akzeptanzstellen, Kurse und mehr."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://gitea.c3d2.de/xbtdd/graphics/raw/branch/main/round.svg"/>
+<meta property="og:URL" content="https://bitcoin-dresden.de/"/>
+<meta property="og:description" content="Erfahrungsaustausch zu Bitcoin in Dresden"/>
+<link rel="icon" href="data:,">
+<meta name="lightning" content="lnurlp:spenden@bitcoin-dresden.de"/>
+<link rel="alternate" type="text/calendar" title="Event Calendar" href="events.ics">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --btc-orange: #f2a900;
+  --btc-orange-dark: #c07900;
+  --btc-orange-glow: rgba(242, 169, 0, 0.15);
+  --bg-deep: #0d0d0d;
+  --bg-card: #161616;
+  --bg-card-hover: #1c1c1c;
+  --text-primary: #f0ece4;
+  --text-secondary: #8a8578;
+  --text-muted: #5a564e;
+  --border-subtle: rgba(242, 169, 0, 0.12);
+  --border-strong: rgba(242, 169, 0, 0.3);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --max-width: 1100px;
+  --section-gap: 5rem;
 }
-@media only screen and (max-width: 600px){
-	body #wrap { font-size: 1.4em; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
-@media only screen and (min-width: 768px){
-	label { display:inline-block;width: 12ex; }
-	body #wrap { font-size: 1.5em; width: 80%; }
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
 }
-time { font-style: italic; }
-time.rrule { font-weight: bold; }
-	</style>
-<script type="module" src="./script/eventdate.js"></script>
-</head><body><div id="wrap" class="container">
-	<noscript>JavaScript ist deaktiviert, dadurch wird beispielsweise nicht das nächste Datum der Events berechnet, sondern bleibt allgemein beschrieben.</noscript>
-	<div><span style="float: right;" class="icon-Bitcoin-Lightning-White-Gold-Rounded icon-7x"></span></div>
-	<section>
 
-		<h1 id="bitcoin-dresden">Bitcoin Dresden</h1>
+a { color: var(--btc-orange); text-decoration: none; transition: color 0.2s; }
+a:hover { color: #ffc942; }
 
-		<h3 id="vor-und-nach-dem-stammtisch">Vor und nach dem Stammtisch</h3>
-		<p>Als ständige Austauschmöglichkeit zwischen den Treffen gibt es eine kleine <a href="https://t.me/BitcoinDresden" target="_blank"><span class="inline-icon"><img src="img/ico-telegram.svg" title="Gruppe auf Telegram"/></span>&nbsp;<i>Telegram</i></a> und den <a href="events.ics" rel="alternate" type="text/calendar" title="Kalender Feed (iCal/ICS)" download="bitcoin-dresden"><span class="inline-icon">📅</span>&nbsp;Kalender Feed</a>. S. a. <a href="https://c3d2.de/calendar.html">Kalender inkl. Feeds vom C3D2</a>. Alternativ gibt es auch Gruppen auf <a href="https://matrix.to/#/#bitcoindresden:matrix.org">Matrix</a> und <a href="https://simplex.chat/contact#/?v=2-7&smp=smp%3A%2F%2Fh--vW7ZSkXPeOUpfxlFGgauQmXNFOzGoizak7Ult7cw%3D%40smp15.simplex.im%2FVo6bfiY0rb-2IYx6R6R9LtkObbKguF0L%23%2F%3Fv%3D1-3%26dh%3DMCowBQYDK2VuAyEAoCKFTHTCgEdnvpm4IMwhRW7yc6yG8xsYHNkMRvwC1xI%253D%26srv%3Doauu4bgijybyhczbnxtlggo6hiubahmeutaqineuyy23aojpih3dajad.onion&data=%7B%22type%22%3A%22group%22%2C%22groupLinkId%22%3A%22falnhSgdHLTcP_lsP9DD3Q%3D%3D%22%7D">SimpleX</a>.</p>
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
 
-		<h3 id="lokale-treffen">Geselliges Treffen von Bitcoinern</h3>
-<!--
-		<p><strong>
-			Das nächste Außerplanmäßige Treffen: <time datetime="">8. Dezember 2023 ab 17:00 Uhr im LaVie Coffee, Wallstraße 11, 01067 Dresden.</time>
-		</strong></p>
--->
-		<p>
-		Thema ist alles um Bitcoin außer Wechselkurse.
-		Nächste planmäßige Termine an <span id="termin1"><time data-rrule="DTSTART=20221110T170000Z;RRULE:FREQ=MONTHLY;BYMONTH=2,4,6,8,10,12;BYDAY=2TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0;RRULE" datetime="">jedem 2. Donnerstag ab 19:00 Uhr in geraden Monaten</time> / <time data-rrule="DTSTART=20250212T150000Z;FREQ=MONTHLY;BYMONTH=1,3,5,7,9,11;BYDAY=2WE;BYHOUR=17;BYMINUTE=30;BYSECOND=0">jedem 2. Mittwoch ab 17:30 Uhr in ungeraden Monate</time></span>
-		sowie <span id="termin2"><time data-rrule="DTSTART=20230727T170000Z;FREQ=MONTHLY;BYDAY=4TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0" datetime="">jedem 4. Donnerstag des Monats</time></span>
-		ab 19 Uhr.
-		Die Zeiten können variieren.
-		In ungeraden Monaten findet der Termin nicht am 2. Donnerstag, sondern am 2. Mittwoch, und im <a href="https://laviecoffee.de/">LaVie</a> ab 17:30 Uhr statt.
-		</p>
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13,13,13,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.8rem 0;
+}
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--btc-orange);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-brand .btc-icon {
+  width: 28px; height: 28px;
+  background: var(--btc-orange);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: var(--bg-deep); font-weight: 800;
+}
+.nav-links { display: flex; gap: 1.8rem; list-style: none; }
+.nav-links a {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--btc-orange); }
+.nav-toggle { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
 
-<ul><u>Konkrete Termine und Orte</u>
-<li><strong><time datetime="2026-05-13T17:30:00+02:00">13.05.2026 ab 17:30 Uhr</time></strong> Bitcoin Stammtisch Dresden im <a href="https://laviecoffee.de/">LaVie Coffee, Wallstraße 11, 01067 Dresden</a></li>
-<li><strong><time datetime="2026-05-28T19:00:00+02:00">28.05.2026 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt, Käthe-Kollwitz-Ufer 23b, 01307 Dresden</a></li>
-<li><strong><time datetime="2026-06-11T19:00:00+02:00">11.06.2026 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt, Käthe-Kollwitz-Ufer 23b, 01307 Dresden</a></li>
-<li><strong><time datetime="2026-06-25T19:00:00+02:00">25.06.2026 ab 19:00 Uhr</time></strong> Bitcoin Stammtisch Dresden im <a href="https://www.faehrgarten.de/">Fährgarten Johannstadt, Käthe-Kollwitz-Ufer 23b, 01307 Dresden</a></li>
-</ul>
+/* ── HERO ── */
+.hero {
+  padding: 6rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--btc-orange-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(242,169,0,0.08);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  font-size: 0.82rem;
+  color: var(--btc-orange);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+.hero-badge::before {
+  content: '⚡';
+  font-size: 0.9rem;
+}
+h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+h1 span { color: var(--btc-orange); }
+.hero-desc {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.25s;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+.btn-primary {
+  background: var(--btc-orange);
+  color: var(--bg-deep);
+}
+.btn-primary:hover { background: #ffc942; color: var(--bg-deep); transform: translateY(-1px); box-shadow: 0 8px 30px rgba(242,169,0,0.25); }
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--btc-orange);
+}
+.btn-outline:hover { background: rgba(242,169,0,0.08); }
 
-		<p>Manche/r findet sich auch bei weiteren Gruppen ein:</p>
-		<ul>
-			<li><!-- Für jeden <em>Dies SATurni</em> (lat. für Samstag)--> Regelmäßig ist ein <a href="https://bitcoinwalk.org/dresden/">BitcoinWalk in Dresden</a> vorgesehen</li>
-			<li>Auch zu anderen Themen beim <a href="https://c3d2.de/space.html" target="_blank">Chaos Computer Club Dresden</a></li>
-			<li><a href="https://t.me/bitcoin_meetup_leipzig" target="_blank">Bitcoin Leipzig</a> (<a href="https://www.meetup.com/de-DE/Leipziger-Bitcoin-Stammtisch/">Meetup.com</a>) <time data-rrule="DTSTART=20131017T190000Z;FREQ=MONTHLY;BYDAY=3TH;BYHOUR=19;BYMINUTE=0;BYSECOND=0" datetime="">jeweils monatlich am 3. Donnerstag ab 19 Uhr</time> im <a href="https://www.openstreetmap.org/node/3955657883" target="_blank">Café Uptown</a> (gelegentlich konnte auch mit Bitcoin gezahlt werden), eine häufige Rückfall-Location ist das benachbarte Soltmann (Riemannstraße 40, 04107 Leipzig) <!--und der <em>Bitcoin Themenabend</em>  data-rrule="DTSTART=20171101T190000Z;FREQ=MONTHLY;BYDAY=1WE;BYHOUR=19;BYMINUTE=0;BYSECOND=0" <time datetime="">jeden 1. Mittwoch ab 19 Uhr</time> im <a href="https://dezentrale.space/" target="_blank">Hackspace dezentrale</a> ist leider lange ausgeblieben--></li><!-- https://bitcointalk.org/index.php?topic=308377.0 , https://bitcointalk.org/index.php?topic=2335694.0 -->
-			<li><a href="https://t.me/BitcoinGoerlitz">Bitcoin-Meetup Görlitz</a> stimmt seine Termine regelmäßig nach Bedarf ab</li>
-			<li><a href="https://t.me/einundzwanzigthueringen">Einundzwanzig Thüringen</a> an wechselnden Orten</li>
-			<li><a href="https://t.me/Einundzwanzig_EE">Einundzwanzig Elbe-Elster</a> ist noch jung und nicht sehr festgelegt, schaut vorbei</li>
-			<li><a href="https://t.me/Meetup21SA">Einundzwanzig Meetup Sachsen-Anhalt</a> tun sich noch schwer regelmäßig zusammen zu kommen</li>
-			<li><a href="https://t.me/BitcoinMeissen">Bitcoin Treff LK Meißen</a> startete im März 2023</li>
-			<li><a href="https://www.lesfemmesorange.work/">Les Femmes Orange</a></li>
+/* ── SECTIONS ── */
+section { padding: var(--section-gap) 0; }
+.section-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--btc-orange);
+  margin-bottom: 0.8rem;
+}
+h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  margin-top: 2.5rem;
+}
+.section-desc {
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin-bottom: 2.5rem;
+  font-size: 1.02rem;
+}
 
-			<li>Für solche mit robustem Magen: <a href="https://www.meetup.com/de-DE/BlockchainMeetupSaxony/" target="_blank">Blockchain Meetup Saxony</a></li>
-			<li><a href="https://www.meetup.com/de-DE/Bitcoin-Lab-Berlin/events/tmxjlsydcfbfb/" target="_blank">Berliner Bitcoin-Stammtisch</a>: <time data-rrule="DTSTART=20110714T190000Z;FREQ=MONTHLY;BYDAY=1WE;BYHOUR=19;BYMINUTE=0;BYSECOND=0" datetime="">jeden 1. Donnerstag ab 19 Uhr</time> im <a href="https://www.friedelrichter.de/" target="_blank">Friedel Richter</a>, ggf. auch <a href="https://meet.fulmo.org/BitcoinStammtischBerlin" target="_blank">online</a></li>
-<!--
-			<li>Weitere Orte mit regelmäßgen Treffen auf der <a href="https://coinspondent.de/regelmaessige-bitcoin-treffen/" target="_blank">Liste des Coinspondent</a></li>
--->
-			<li>Eine <a href="https://einundzwanzig.space/meetups/">Liste vieler Treffen</a> auf <code>einundzwanzig.space</code></li>
-		</ul>
-	</section>
-	<section>
-		<h2 id="bildung">Kurse und Weiterbildung</h2>
-		<p>Jeder kann und sollte sich selbst mit Bitcoin beschäftigen. Anfangs und bei speziellen Themen kann dies anstrengend werden. Wir haben lokal Aktive die anderen zu extra Terminen außerhalb des Stammtisches oder gar individuell helfen ihren Weg und Lösungen zu finden.</p>
-		<div class="center">
-		<div class="kurs">
-			<span class="orange">Bitcoin-Ausbildung</span> für Neugierige, Anfänger, Fortgeschrittene, Selbständige, Unternehmer, Investoren,&nbsp;…
-			<div><a href="https://lerne-bitcoin.de/" target="_blank" class="orange">lerne-bitcoin.de</a></div>
-			Lokale Kurse und individuelles Training
-		</div>
-		</div>
-		<div style="clear:both;"/>
-	</section>
-	<section>
+/* ── EVENT CARDS ── */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+.event-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--btc-orange), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.event-card:hover { border-color: var(--border-strong); background: var(--bg-card-hover); }
+.event-card:hover::before { opacity: 1; }
+.event-date {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--btc-orange);
+  margin-bottom: 0.5rem;
+}
+.event-title {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+.event-location {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.event-location::before { content: '📍'; font-size: 0.8rem; }
+.event-card.next {
+  border-color: var(--btc-orange);
+  background: linear-gradient(135deg, rgba(242,169,0,0.06) 0%, var(--bg-card) 60%);
+}
+.event-card.next .event-badge {
+  display: inline-block;
+  background: var(--btc-orange);
+  color: var(--bg-deep);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 50px;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
-		<h2 id="akzeptanzstellen-in-deiner-naehe">Akzeptanzstellen in deiner Nähe</h2>
-		<p>Für die Treffen wären Gastronomie oder andere Hosts mit Bitcoin Akzeptanz und hinreichend Platz natürlich sehr willkommen. Wenn euch etwas bekannt wird oder ihr einen Gastronomen direkt kennt, <a href="kontakt.html">meldet euch</a> gerne.<br/>
-		Bitte seid zuvorkommend zum Personal, da nicht jede/r sich auch privat damit beschäftigt. Wenn ihr Betreiber von Geschäften überzeugt, gibt es dafür möglicherweise <a href="#bounties">Belohnungen</a>.</p>
-		<ul>
-			<li><a href="https://laviecoffee.de/" target="_blank">LaVie Coffee &amp; Gourmet</a> (Seit Eröffnung 2023-11 wird Bitcoin via Lightning akzeptiert)</li>
-			<li><a href="https://www.alua.de/" target="_blank">Alua Vegan Catering &amp; Café</a> (Seit 2023-11 wird Bitcoin via Lightning akzeptiert)</li>
-			<li><a href="https://www.faehrgarten.de/" target="_blank">Fährgarten Johannstadt</a> (Seit 2023-08 wird Bitcoin via Lightning akzeptiert)</li>
-			<!--li><a href="https://www.openstreetmap.org/node/9174513637" target="_blank">Petzi's Sportsbar</a> (Seit 2021-10-14 wird auf der Leipziger Str. 228, sofern bei Bestellung angesagt – neben Girocard und Bargeld – auch Bitcoin per Lightning akzeptiert)</li-->
-		</ul>
-		<p>Weitere uns persönlich bekannte Geschäfte in Dresden:</p>
-		<table>
-			<tr>
-				<th>Name m. Link zu OSM/Website</th>
-				<th>BC|LN?</th>
-			</tr>
-			<tr>
-				<td><a href="https://www.openstreetmap.org/#map=19/51.06360/13.82222" target="_blank">Brot und mehr</a></td>
-				<td>BC, LN</td>
-			</tr>
-			<tr>
-				<td><a href="https://dresdentech.de/" target="_blank">DresdenTech UG</a></td>
-				<td>BC, LN</td>
-			</tr>
-			<!--tr>
-				<td><a href="https://www.openstreetmap.org/#map=19/51.05979/13.74260" target="_blank">Sokrates</a></td>
-				<td>BC</td>
-			</tr-->
-			<tr>
-				<td><a href="https://www.openstreetmap.org/#map=19/51.09542/13.71100" target="_blank">Ferienwohnung im Wasserwerk Trachau</a></td>
-				<td>BC</td>
-			</tr>
-			<tr>
-				<td><a href="https://com1edv.de/" target="_blank">com1EDV</a>, <a href="https://www.openstreetmap.org/?#map=19/51.119963/13.789789">Königsbrücker Landstr.115, 01109 Dresden</a></td>
-				<td>BC, LN</td>
-			</tr>
-			<!--
-			<tr>
-				<td><a href="" target="_blank"></a></td>
-				<td></td>
-			</tr>
-			-->
-		</table>
-		<p>Die Liste hier ist sicher begrenzt, deshalb möchten wir auf die Möglichkeit von Einträgen in Kartendiensten wie <a href="https://wiki.openstreetmap.org/wiki/Bitcoin" target="_blank">Openstreetmap</a> und Verzeichnissen hinweisen.
-		</p>
-		<ul>
-			<li><a href="https://coinpages.io/" target="_blank">Coinpages belohnt neue Einträge mit Sats!</a></li>
-			<li><a href="https://btcmap.org/">BTC Map</a> – durch Nutzerfeedback aktualisierte Karte auch als App</li>
-			<li><a href="https://www.coinmap.it/#13/51.0711/13.7472" target="_blank">coinmap.it</a></li>
-			<li><a href="https://coinmap.org/" target="_blank">coinmap.org</a></li>
-			<li><a href="https://map.bitcoin.com/" target="_blank">map.bitcoin.com</a></li>
-		</ul>
-	</section>
-	<section>
-		<h2 id="diy">DIY und Hardware: 3D-Drucke</h2>
-		<p>Als souveräne Personen nehmen wir das eigene Geschick selbst in die Hand. Mit fertigen Designs  ist der Einstieg leicht möglich. Der erste Schritt ist das Schlüsselmaterial – ideal mit eigener <a href="#hardware">Hardwarewallet</a>, weiter geht es mit Backup-Lösungen und weitere Steigerungen sind mit der selbstbetriebenen Bitcoin Node noch lange nicht aufgebraucht. Freundlicher Service von lokalem Bitcoiner.</p>
-		<div class="center">
-		<div class="kurs">
-			Von Spielzeug bis zu Werkzeugen rund um <span class="orange">Bitcoin zum Anfassen</span>; Produkte und Service für deine Ideen
-			<div><a href="https://21drucker.farm/" target="_blank" class="orange">21drucker.farm</a></div>
-			Drucke eigene Ideen,<br/>Sichere die Zukunft
-		</div>
-		</div>
-		<div style="clear:both;"/>
-	</section>
-	<section>
-		<h2 id="bounties">Bounties / Prämen für's Orangepillen</h2>
-		<p>Einzelne Teilnehmer des Netzwerkes haben Belohnungen auf neue Akzeptanzsstellen in Dresden aufgerufen.</p>
-		<blockquote>Wer sie [das neue „Babička im Rausch“, Ecke Bürgerstraße und Oschatzer in Dresden-Pieschen, Anm.] dazu bringt Lightning zu akzeptieren bekommt 5.000 sats von mir.<a href="https://t.me/BitcoinDresden/15844">[Al Coholic]</a></blockquote>
-		<blockquote>100.000 Sats für die erste Pizzabude in Dresden, die dauerhaft Sats mindestens per LN annimmt.<a href="https://t.me/BitcoinDresden/15869">[Wolf]</a></blockquote>
-		<blockquote>21.000 Sats von mir zusätzlich für die Person, die von der Geschäftsführung als für die Entscheidung wesentlichen Überbringer der orangen Pille benannt wird.<a href="https://t.me/BitcoinDresden/15844">[Wolf]</a></blockquote>
-		<blockquote>Würde auch 12k Sats zahlen …<a href="https://t.me/BitcoinDresden/15846">[Tuvok]</a></blockquote>
-		<p>Außerdem unsbekannte Belohnungen auch außerhalb Dresdens …</p>
-		<blockquote>bis 100.000 SAT (Satoshis) pro Eintrag!<a href="https://coinpages.io/coinpages-bitcoin-scout/">[coinpages]</a></blockquote>
-	</section>
+/* ── VENUE LIST (Akzeptanzstellen) ── */
+.venue-list { display: grid; gap: 0.6rem; }
+.venue-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+.venue-item:hover { border-color: var(--border-strong); }
+.venue-icon {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  background: rgba(242,169,0,0.1);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  color: var(--btc-orange);
+}
+.venue-info { flex: 1; }
+.venue-name { font-weight: 600; font-size: 0.95rem; }
+.venue-detail { color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.15rem; }
+.venue-tags { display: flex; gap: 0.4rem; margin-top: 0.4rem; }
+.tag {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 50px;
+  background: rgba(242,169,0,0.08);
+  color: var(--btc-orange);
+  font-weight: 500;
+}
+.tag.ln { background: rgba(153, 102, 255, 0.1); color: #b38aff; }
 
-	<section>
-		<h2 id="it">IT-Services</h2>
-		<p>Hier möchten wir auch Services sammeln, die eine direkte Zahlung in Bitcoin und idealer Weise auch kostengünstig über 2nd-Layer-Netzwerke ermöglichen.</p>
-		<ul>
-		<li>VPN, E-Mail, Hosting bei <a href="https://torguard.net/">Torguard</a></li>
-		<li>Wordpress Hosting <a href="https://twentyonesolutions.com/">TwentyOne Solutions</a></li>
-		<li>VPS Hosting <a href="https://host4coins.net/">Host 4 Coins</a></li>
-		<li>Dedicated Server <a href="https://www.kernelhost.com/">KernelHost</a></li>
-		<li>AI Dienste je Abfrage via LN: <a href="https://ppq.ai/">PayPerQ</a></li>
-		</ul>
-		<div class="center">
-		<div class="kurs">
-			VPN via <span class="orange">Lightning Network</span> zahlen
-			<div><a href="https://mullvad.net/" target="_blank" class="orange">Mulvad</a></div>
-			Technologie gegen Einschränkungen für mehr Digitale Souveränität
-		</div>
-		</div>
-		<div style="clear:both;"/>
-	</section>
+/* ── INFO CARDS (Kurse, DIY, etc.) ── */
+.highlight-card {
+  background: linear-gradient(135deg, rgba(242,169,0,0.06), var(--bg-card));
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+.highlight-card .label { color: var(--btc-orange); font-weight: 600; font-size: 0.92rem; margin-bottom: 0.3rem; }
+.highlight-card .big-link {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: var(--btc-orange);
+  display: block;
+  margin: 0.5rem 0;
+}
+.highlight-card .big-link:hover { color: #ffc942; }
+.highlight-card .sub { color: var(--text-secondary); font-size: 0.92rem; }
 
-	<section>
-		<h2 id="fight-the-fud">Fight the FUD</h2>
-		<p>Noch immer gibt es zahlreiche Wiederholungen wiederlegbarer Argumente gegen Bitcoin. Wer sich informieren möchte, kann im Internet wirklich alles Nötige dazu finden:</p>
+/* ── LINK LISTS ── */
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.8rem;
+}
+.link-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  font-size: 0.92rem;
+}
+.link-item:hover { border-color: var(--border-strong); background: var(--bg-card-hover); color: var(--text-primary); }
+.link-item .link-icon {
+  width: 32px; height: 32px;
+  background: rgba(242,169,0,0.08);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
 
-		<h3 id="projekte">Projekte</h3>
-		<ul>
-			<li><a href="https://ebea.work/resources/research/">European Bitcoin Energy Association (EBEA) eV</a>, VR 202805 AG Augsburg</li>
-			<li><a href="https://bitcoin-takeover.com">Bitcoin Takeover</a>, <a href="https://bitcoin-takeover.com/wp-content/uploads/2023/07/BTCTKVR-3-complete-DEUTSCH0.2-3.pdf">BTCTKVR Ausgabe 3: Breaking FUD (Deutsch)</a></li>
-			<li><a href="https://www.bitcoinisdead.org/" target="_blank">Bitcoin totgesagt</a></li>
-			<li><a href="https://99bitcoins.com/category/bitcoin-obituaries/" target="_blank">Bitcoin Nachrufe</a></li>
-			<li><a href="https://endthefud.org/" target="_blank">FUD Sammlung mit belegten Argumenten</a></li>
-			<li><a href="https://coinspondent.de/honigdachs-der-bitcoin-podcast-aus-leipzig/" target="_blank">Honigdachs Podcast</a></li>
-			<li><a href="https://magicfuturemoney.de/" target="_blank">magic future money</a></li>
-			<li><a href="https://netpositive.money/" target="_blank"><strong>netpositive.money</strong> is an initiative by bitcoiners who want to contribute to climate change solutions.</a></li>
-			<li>Einundzwanzig, auch mit <a href="https://einundzwanzig.space/podcast/">Podcast</a>, <a href="https://t.me/einundzwanzigpodcast">Telegram Channel</a> und anderen (a)social Media</li>
-			<li><a href="https://podcastindex.org/podcast/6727342">Bitcoin kurz erklärt</a> – ein Podcast für alle, die es kompakt mögen</li>
-		</ul>
+/* ── BOUNTY SECTION ── */
+.bounty-card {
+  background: var(--bg-card);
+  border-left: 3px solid var(--btc-orange);
+  padding: 1rem 1.3rem;
+  margin-bottom: 0.8rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.92rem;
+}
+.bounty-card .amount {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--btc-orange);
+}
+.bounty-card .author { color: var(--text-muted); font-size: 0.82rem; margin-top: 0.3rem; }
 
-		<h3 id="buecher">Bücher</h3>
-		<p>Wir empfehlen grundsätzlich und nicht nur aus Gründen der Müllvermeidung die Nutzung von <a href="https://wiki.c3d2.de/Bibliotheken_online">Bibliotheken</a>.</p>
-		<ul>
-			<li><a href="https://github.com/bitcoinbook/bitcoinbook" target="_blank">Mastering Bitcoin</a></li>
-			<li><a href="https://github.com/lnbook/lnbook" target="_blank">Mastering the Lightning Network</a></li>
-			<li><a href="https://github.com/monerobook/monerobook/" target="_blank">Mastering Monero</a></li>
-			<li><a href="https://isbn.de/titel/suche/die+orange+pille+Warum+Bitcoin+weit+mehr+als+nur+ein+neues+Geld+ist">Die orange Pille: Warum Bitcoin weit mehr als nur ein neues Geld ist</a></li>
-			<li><a href="https://web.archive.org/web/20220525162530/https://danielsan.keybase.pub/reading/Cryptoasset-Inheritance-Planning_-A-Simple-Guide-for-Owners_compressed.pdf?dl=0" target="_blank">Cryptoasset Inheritance Planning</a></li>
-			<li><a href="https://marcsteiner.tech/bitcoins-vererben-buch" target="_blank">Bitcoin<del>s</del> verwahren und vererben</a> und das zugehörige <a href="https://marcsteiner.tech/bitcoin-nachlass-tool" target="_blank">Tool</a></li>
-			<li>Viele mehr über die Verlage <a href="https://aprycot.media/" target="_blank">Aprycot Media</a> oder <a href="https://bitcoinbook.shop/">Konsensus Network</a></li>
-			<li><a href="https://www.isbn.de/buch/9789949742981_bitcoin-begreifen.htm">Bitcoin begreifen von Kalle Rosenbaum</a></li>
-			<li>Für Steuerberater und Menschen die Buchführung interessiert… <a href="https://isbn.de/9783503191536">Bitcoin und andere Kryptowährungen (currency token) - Grundlagen der Besteuerung im Privat- und im Betriebsvermögen</a>, als PDF (inkl. DRM) auch in Biblioheken wie der <a href="https://www.slub-dresden.de/">SLUB Dresden</a>.</li>
-		</ul>
-		</section>
+/* ── TABLE ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+th {
+  text-align: left;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  font-size: 0.92rem;
+}
+tr:hover td { background: rgba(242,169,0,0.02); }
 
-		<section>
-		<h3 id="anleitungen">Anleitungen / How-To / Tools</h3>
-		<ul>
-			<li><a href="https://aprycot.media/blog/diy-private-schluessel-fuer-bitcoin-erstellen/">Schlüssel manuell generieren</a></li>
-			<li><a href="https://iancoleman.io/bip39/">Mnemonic Code Converter</a> by <a href="https://github.com/iancoleman">iancoleman</a></li>
-			<li><a href="https://bitgen.org/">BitGen</a> CLI Address und Seed Generator</li>
-			<li><a href="https://walletsrecovery.org/">Wallets Recovery</a> Verzeichnis für Wallets zu Ableitungspfaden und anderen Besonderheiten</li>
-		</ul>
+/* ── COMMUNITY LINKS ── */
+.comm-grid {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.comm-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50px;
+  font-size: 0.88rem;
+  transition: all 0.2s;
+}
+.comm-chip:hover { border-color: var(--btc-orange); color: var(--btc-orange); }
 
-		<h3 id="musik-und-kunst">Musik &amp; Kunst</h3>
-		<ul>
-			<li><a href="https://www.youtube.com/watch?v=JaMJi1_1tkA">Bitcoin Rap Battle Debate: Hamilton vs. Satoshi</a></li>
-			<li><a href="https://www.youtube.com/watch?v=i9cDyhho4nk">Have Fun Staying Poor von Matt Hodl</a>; donate: <a href="bitcoin:3PgsWQbLDeKEmGuSJSXm4Ubrdzj5UDMJwF">3PgsWQbLDeKEmGuSJSXm4Ubrdzj5UDMJwF</a></li>
-			<li><a href="https://www.nbtv.media/">Naomi Brockwell</a> mit zahlreichen Cover Songs, wie <a href="https://www.youtube.com/watch?v=7TXavYgFPX0">Bitcoin Girl</a></li>
-			<li><a href="https://leo-mattes.com/pump-it-up/">Noch mehr Songs …</a></li>
-			<li><a href="https://josie.io/collections/original-paintings">J. Bellini</a> – Malerei</li>
-			<li><a href="https://thelittlehodler.com/">Lina Seiche</a> – Little Hodler Merch</li>
-			<li><a href="https://www.bitcoinapexart.com/">Bitcoin Apex Art</a> – unique Bitcoin graphite art – Daniel Kränkel Bleistiftzeichnungen</li>
-			<li><a href="https://twitter.com/musikertreff">@Musikertreff</a>'s Honig: <a href="https://satoshistore.io/products/cyberbee-honey">bei SatoshiStore</a>, <a href="https://saltndaisy.at/">bei Salt'n Daisy</a> und Lieder: <a href="https://www.youtube.com/watch?v=YwY_oN-2C-M">Ois auf pump</a> (<a href="./lieder/600-Ois-auf-pump_de-en.pdf">Text</a>, <a href="./lieder/Musikertreff-OisAufPump.pdf">Noten</a>), <a href="https://www.youtube.com/watch?v=_S0ar6uCexs">Es is ah Traum</a> (<a href="./lieder/601-De-Loesung-fuer-Ois.pdf">Text</a>, <a href="./lieder/Musikertreff-EsIsAhTraum.pdf">Noten</a>)</li>
-		</ul>
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 3rem 0;
+  margin-top: 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--btc-orange);
+  margin-bottom: 0.6rem;
+}
+footer p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.7; }
+footer h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+footer ul { list-style: none; }
+footer li { margin-bottom: 0.5rem; }
+footer li a { color: var(--text-muted); font-size: 0.88rem; }
+footer li a:hover { color: var(--btc-orange); }
+.footer-bottom {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
 
-		<h3 id="hardware">Hardware &amp; Backup-Lösungen</h3>
-		<ul>
-			<li><a href="https://seedsigner.com/">SeedSigner</a></li>
-			<li><a href="https://specter.solutions/">Specter</a></li>
-			<li><a href="https://selfcustody.github.io/krux/">Krux</a></li>
-			<li><a href="https://bitbox.shop/">Bitbox</a> – Rabatt-Codes: <code>EINUNDZWANZIG</code>, <code>EINUNDZWANZIG10</code></li>
-			<li>Blockstream Jade <a href="https://github.com/Blockstream/Jade">DIY</a> und <a href="https://store.blockstream.com/product-category/physical_storage/">fertig</a></li>
-			<li>Kompaktes Backup in Titanium <a href="https://tinyseed.io/">Tinyseed</a></li>
-			<li>Vulcan's Steel-QR bei <a href="https://www.gobrrr.me/shop/cold-storage/">GoBrrr</a></li>
-			<li><a href="https://raspiblitz.org/">RaspiBlitz</a></li>
-			<li>Verschiedenes auch bei <a href="https://satoshistore.io/collections/wallet-backup">SatoshiStore</a></li>
-		</ul>
-		<!--
-		<a href="https://www.pantiesforbitcoin.com/">Panties For Bitcoin</a>
-		-->
+/* ── PGP / CANARY ── */
+.pgp-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-top: 1rem;
+}
 
-		<h3 id="heizung">Bitcoin Miner als Heizungen</h3>
-		<ul>
-			<li>Auswahl verschiedener Hersteller bei <a href="https://miners.de/collections/bitcoin-heater">miners.de</a></li>
-			<li>In verschiedneen Größenordnungen bei <a href="https://21energy.com/de/products/ofen">21energy</a></li>
-			<li><a href="https://ry3t.com/">RY3T</a></li>
-			<li><a href="https://www.ser-was.at/bitcoin-zentralheizung">Bitcoin Zentralheizung</a></li>
-			<li>Forschung und Beratung bei <a href="https://terahash.space/">terahash.energy</a></li>
-		</ul>
+/* ── DIVIDER ── */
+.divider {
+  border: none;
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 1rem 0;
+}
 
-		<h3 id="martplaetze">Marktplätze</h3>
-		<ul>
-			<li><a href="https://vexl.it/">Vexl</a> – App zum Handeln beliebiger Güter und Leistungen für Sats</li>
-			<li><a href="https://satoshiskleinanzeigen.space/">Satoshis Kleinanzeigen</a> – Webkatalog für alles für Sats</li>
-			<li><a href="https://plebeian.market/">Plebeian Market</a> – Marktplatz auf <a href="https://nostr.com/">Nostr</a></li>
-			<li><a href="https://lnp2pbot.com/">LNp2pBot</a>: Sats mit Lightning über Grenzen hinweg handeln</li>
-			<li><a href="https://peachbitcoin.com/de/">Peach</a>: Bitcoin (nur onchain) leicht über eine App p2p handeln</li>
-		</ul>
+/* ── SCHEDULE PATTERN ── */
+.schedule-note {
+  background: rgba(242,169,0,0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.schedule-note strong { color: var(--text-primary); }
 
-		<h4 id="jobs">Jobs / Arbeitsmarkt / Stellenanzeigen</h4>
-		<ul>
-			<li><a href="https://bitcoinerjobs.com/">BitcoinerJobs</a></li>
-			<li><a href="https://bebitcoiner.com/">BeBitcoiner</a></li>
-			<li><a href="https://www.stepstone.de/jobs/bitcoin">stepstone</a></li>
-			<li><a href="https://de.indeed.com/q-bitcoin-jobs.html">indeed</a></li>
-			<li><a href="https://cryptojobslist.com/bitcoin">CryptoJobsList</a></li>
-		</ul>
+/* ── SIMPLE LIST ── */
+.simple-list { list-style: none; }
+.simple-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  font-size: 0.92rem;
+}
+.simple-list li:last-child { border-bottom: none; }
 
-		<h3 id="cashbach-online-shopping">Cashback / Online Shopping</h3>
-		<ul>
-			<li><a href="https://satsback.com/">Satsback</a></li>
-			<li>Breites Angebot und Concierge-Service bei <a href="https://shopinbit.com/">SHOPINBIT</a></li>
-			<li><a href="https://www.bitrefill.com/">Bitrefill</a>: Gutscheine/Codes für viele Geschäfte, Services</li>
-			<li><a href="https://www.coinsbee.com/">coinsbee</a>: Gutscheine/Codes</li>
-			<li><a href="https://keys4coins.com/">keys4coins</a>: Lizenzschlüssel und Gutscheine für insb. Spieleplattformen</li>
-			<li><a href="https://stekking.com/">Stekking</a></li>
-			<li><a href="https://www.shoop.de/">Shoop</a></li>
-		</ul>
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-content > * {
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+}
+.hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+.hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+.hero-content > *:nth-child(4) { animation-delay: 0.4s; }
 
-		<h3 id="kyc-payment">KYC Zahlung und Handel</h3>
-		<ul>
-			<li>Handel und Kreditkarte <a href="https://bringin.xyz/">bringin</a></li>
-			<li><a href="https://www.bitrefill.com/">Bitrefill</a>: Prepaid-Kreditkarten neben Gutscheinen/Codes für viele Geschäfte, Services</li>
-			<li><a href="https://kraken.com/">kraken</a> günstige Börse mit API für <a href="https://github.com/dennisreimann/stacking-sats-kraken">DCA auf der eigenen Node</a></li>
-			<li><a href="https://www.bullbitcoin.com/">Bull Bitcoin</a> aus Kanada: Ausgeben, Verkaufen oder Kaufen</li>
-		</ul>
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: rgba(13,13,13,0.98);
+    padding: 1rem 1.5rem 1.5rem;
+    gap: 0.8rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .nav-toggle { display: block; }
+  .hero { padding: 3.5rem 0 2.5rem; }
+  .events-grid { grid-template-columns: 1fr; }
+  .link-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  section { padding: 3rem 0; }
+}
+@media (max-width: 480px) {
+  .hero-actions { flex-direction: column; }
+  .btn { justify-content: center; }
+}
 
-		<h3 id="software">Empfohlene Software</h3>
-		<p>Freie Software, die Verwaltung deiner Sats ohne Fremde in Verbindung mit Hardware Wallets ermöglicht:</p>
-		<ul>
-			<li><a href="https://sparrowwallet.com/">Sparrow Wallet</a> Wallets am PC verwalten, auch watch-only</li>
-			<li><a href="https://bluewallet.io/">BlueWallet</a> Wallets auf Android verwalten, auch watch-only</li>
-			<li><a href="https://lianawallet.com/">Liana Wallet</a> zur Sicherung mit MiniScript zum Zweck von Firmen, Vererbung oder eigener Verwahrung</li>
-		</ul>
-	</section>
+/* print */
+@media print {
+  body { background: white; color: black; }
+  nav, .hero::before, body::before { display: none; }
+  a { color: inherit; text-decoration: underline; }
+}
+</style>
+</head>
+<body>
 
-	<section>
-		<h5 id="canary">Signing Key &amp; Canary</h5>
-		<p>
-			PGP-Fingerprint: <code><a href="./pgp-pubkey.gpg">F77DBD753E1F49AE46075BA7F3E93626084BA289</a></code>
-		</p>
-		<pre>
------BEGIN PGP SIGNED MESSAGE-----
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a href="#" class="nav-brand">
+      <span class="btc-icon">₿</span>
+      Bitcoin Dresden
+    </a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menü">☰</button>
+    <ul class="nav-links">
+      <li><a href="#termine">Termine</a></li>
+      <li><a href="#akzeptanz">Akzeptanzstellen</a></li>
+      <li><a href="#bildung">Bildung</a></li>
+      <li><a href="#ressourcen">Ressourcen</a></li>
+      <li><a href="#community">Community</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container hero-content">
+    <h1>Gemeinsam<br><span>Bitcoin</span> entdecken.</h1>
+    <p class="hero-desc">Erfahrungsaustausch, Stammtisch und lokale Vernetzung für Bitcoiner in Dresden. Offen für alle – von neugierig bis fortgeschritten.</p>
+    <div class="hero-actions">
+      <a href="https://t.me/BitcoinDresden" target="_blank" class="btn btn-primary">⚡ Telegram beitreten</a>
+      <a href="events.ics" class="btn btn-outline" download="bitcoin-dresden">📅 Kalender abonnieren</a>
+    </div>
+  </div>
+</header>
+
+
+<!-- TERMINE -->
+<section id="termine">
+
+  <div class="container">
+    <div class="section-label">Nächste Treffen</div>
+    <h2>Stammtisch-Termine</h2>
+    <div class="schedule-note">
+      Wir treffen uns regelmäßig: <strong>In geraden Monaten am 2. Donnerstag ab 19:00 Uhr</strong>, 
+      <strong>in ungeraden Monaten am 2. Mittwoch ab 17:30 Uhr</strong> (im LaVie), sowie 
+      <strong>jeden 4. Donnerstag ab 19:00 Uhr</strong>. Die Zeiten können variieren.
+    </div>
+
+    <div class="events-grid">
+<div class="event-card next"><strong><div class="event-date"><time datetime="2026-05-13T17:30:00+02:00">Wed 13.05.2026 ab 17:30 Uhr</time></div></strong> Bitcoin Stammtisch Dresden: <div class="event-title"></div> im <div class="event-location"><a href="https://laviecoffee.de/">LaVie Coffee, Wallstraße 11, 01067 Dresden</a></div></div>
+<div class="event-card next"><strong><div class="event-date"><time datetime="2026-05-28T19:00:00+02:00">Thu 28.05.2026 ab 19:00 Uhr</time></div></strong> Bitcoin Stammtisch Dresden: <div class="event-title"></div> im <div class="event-location"><a href="https://www.faehrgarten.de/">Fährgarten Johannstadt, Käthe-Kollwitz-Ufer 23b, 01307 Dresden</a></div></div>
+<div class="event-card next"><strong><div class="event-date"><time datetime="2026-06-11T19:00:00+02:00">Thu 11.06.2026 ab 19:00 Uhr</time></div></strong> Bitcoin Stammtisch Dresden: <div class="event-title"></div> im <div class="event-location"><a href="https://www.faehrgarten.de/">Fährgarten Johannstadt, Käthe-Kollwitz-Ufer 23b, 01307 Dresden</a></div></div>
+<div class="event-card next"><strong><div class="event-date"><time datetime="2026-06-25T19:00:00+02:00">Thu 25.06.2026 ab 19:00 Uhr</time></div></strong> Bitcoin Stammtisch Dresden: <div class="event-title"></div> im <div class="event-location"><a href="https://www.faehrgarten.de/">Fährgarten Johannstadt, Käthe-Kollwitz-Ufer 23b, 01307 Dresden</a></div></div>
+<div class="event-card next"><strong><div class="event-date"><time datetime="2026-07-08T19:00:00+02:00">Wed 08.07.2026 ab 19:00 Uhr</time></div></strong> Bitcoin Stammtisch Dresden: <div class="event-title"></div> im <div class="event-location"><a href="https://laviecoffee.de/">LaVie Coffee, Wallstraße 11, 01067 Dresden</a></div></div>
+<div class="event-card next"><strong><div class="event-date"><time datetime="2026-07-23T19:00:00+02:00">Thu 23.07.2026 ab 19:00 Uhr</time></div></strong> Bitcoin Stammtisch Dresden: <div class="event-title"></div> im <div class="event-location"><a href="https://www.faehrgarten.de/">Fährgarten Johannstadt, Käthe-Kollwitz-Ufer 23b, 01307 Dresden</a></div></div>
+
+    </div>
+
+    <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 0.9rem;">
+      Thema ist alles rund um Bitcoin – außer Wechselkurse. Als Austauschmöglichkeit zwischen den Treffen gibt es Gruppen auf 
+      <a href="https://t.me/BitcoinDresden" target="_blank">Telegram</a>, 
+      <a href="https://matrix.to/#/#bitcoindresden:matrix.org">Matrix</a> und 
+      <a href="https://simplex.chat/contact#/?v=2-7&smp=smp%3A%2F%2Fh--vW7ZSkXPeOUpfxlFGgauQmXNFOzGoizak7Ult7cw%3D%40smp15.simplex.im%2FVo6bfiY0rb-2IYx6R6R9LtkObbKguF0L%23%2F%3Fv%3D1-3%26dh%3DMCowBQYDK2VuAyEAoCKFTHTCgEdnvpm4IMwhRW7yc6yG8xsYHNkMRvwC1xI%253D%26srv%3Doauu4bgijybyhczbnxtlggo6hiubahmeutaqineuyy23aojpih3dajad.onion&data=%7B%22type%22%3A%22group%22%2C%22groupLinkId%22%3A%22falnhSgdHLTcP_lsP9DD3Q%3D%3D%22%7D">SimpleX</a>.
+    </p>
+  </div>
+</section>
+
+<!-- AKZEPTANZSTELLEN -->
+<section id="akzeptanz">
+  <div class="container">
+    <div class="section-label">Bitcoin ausgeben</div>
+    <h2>Akzeptanzstellen in Dresden</h2>
+    <p class="section-desc">Diese Geschäfte akzeptieren Bitcoin – einige direkt über Lightning. Bitte seid zuvorkommend zum Personal.</p>
+
+    <h3 style="margin-top: 0;">⚡ Lightning-Akzeptanz bei Treffen</h3>
+    <div class="venue-list">
+      <div class="venue-item">
+        <div class="venue-icon">🍺</div>
+        <div class="venue-info">
+          <div class="venue-name"><a href="https://www.openstreetmap.org/node/9174513637" target="_blank">Petzi's Sportsbar</a></div>
+          <div class="venue-detail">Leipziger Str. 228 · seit Oktober 2021</div>
+          <div class="venue-tags"><span class="tag ln">⚡ Lightning</span></div>
+        </div>
+      </div>
+      <div class="venue-item">
+        <div class="venue-icon">🌳</div>
+        <div class="venue-info">
+          <div class="venue-name"><a href="https://www.faehrgarten.de/" target="_blank">Fährgarten Johannstadt</a></div>
+          <div class="venue-detail">Käthe-Kollwitz-Ufer 23b · seit August 2023</div>
+          <div class="venue-tags"><span class="tag ln">⚡ Lightning</span></div>
+        </div>
+      </div>
+      <div class="venue-item">
+        <div class="venue-icon">🥗</div>
+        <div class="venue-info">
+          <div class="venue-name"><a href="https://www.alua.de/" target="_blank">Alua Vegan Catering &amp; Café</a></div>
+          <div class="venue-detail">seit November 2023</div>
+          <div class="venue-tags"><span class="tag ln">⚡ Lightning</span></div>
+        </div>
+      </div>
+      <div class="venue-item">
+        <div class="venue-icon">☕</div>
+        <div class="venue-info">
+          <div class="venue-name"><a href="https://laviecoffee.de/" target="_blank">LaVie Coffee &amp; Gourmet</a></div>
+          <div class="venue-detail">Wallstraße 11 · seit Eröffnung November 2023</div>
+          <div class="venue-tags"><span class="tag ln">⚡ Lightning</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Weitere bekannte Geschäfte</h3>
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Zahlung</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="https://www.openstreetmap.org/#map=19/51.06360/13.82222" target="_blank">Brot und mehr</a></td><td><span class="tag">BTC</span> <span class="tag ln">⚡ LN</span></td></tr>
+        <tr><td><a href="https://dresdentech.de/" target="_blank">DresdenTech UG</a></td><td><span class="tag">BTC</span> <span class="tag ln">⚡ LN</span></td></tr>
+        <tr><td><a href="https://www.openstreetmap.org/#map=19/51.09542/13.71100" target="_blank">Ferienwohnung im Wasserwerk Trachau</a></td><td><span class="tag">BTC</span></td></tr>
+        <tr><td><a href="https://com1edv.de/" target="_blank">com1EDV</a>, <a href="https://www.openstreetmap.org/#map=19/51.063301/13.756426">Bautzner Str. 55</a></td><td><span class="tag">BTC</span> <span class="tag ln">⚡ LN</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Kartenverzeichnisse</h3>
+    <div class="link-grid">
+      <a href="https://btcmap.org/" target="_blank" class="link-item"><span class="link-icon">🗺️</span> BTC Map – Karte &amp; App</a>
+      <a href="https://coinpages.io/" target="_blank" class="link-item"><span class="link-icon">🪙</span> Coinpages – belohnt mit Sats!</a>
+      <a href="https://www.coinmap.it/#13/51.0711/13.7472" target="_blank" class="link-item"><span class="link-icon">📍</span> coinmap.it</a>
+      <a href="https://coinmap.org/" target="_blank" class="link-item"><span class="link-icon">📍</span> coinmap.org</a>
+    </div>
+
+    <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 1.5rem;">
+      Kennt ihr eine Akzeptanzstelle? <a href="kontakt.html">Meldet euch</a> gerne. Überzeugt ihr einen Laden, gibt es <a href="#bounties">Bounties</a>!
+    </p>
+  </div>
+</section>
+
+<!-- BILDUNG -->
+<section id="bildung">
+  <div class="container">
+    <div class="section-label">Lernen &amp; Verstehen</div>
+    <h2>Kurse und Weiterbildung</h2>
+    <p class="section-desc">Jeder kann und sollte sich selbst mit Bitcoin beschäftigen. Lokal aktive Bitcoiner helfen bei speziellen Themen – individuell und persönlich.</p>
+
+    <div class="highlight-card">
+      <div class="label">Bitcoin-Ausbildung für alle Level</div>
+      <a href="https://lerne-bitcoin.de/" target="_blank" class="big-link">lerne-bitcoin.de</a>
+      <div class="sub">Lokale Kurse und individuelles Training – für Neugierige, Anfänger, Fortgeschrittene, Selbständige und Unternehmer</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIY -->
+<section>
+  <div class="container">
+    <div class="section-label">Selbst machen</div>
+    <h2>DIY und Hardware: 3D-Drucke</h2>
+    <p class="section-desc">Souveränität beginnt mit dem eigenen Handeln. Vom ersten Hardware-Wallet bis zur eigenen Bitcoin-Node.</p>
+
+    <div class="highlight-card">
+      <div class="label">Bitcoin zum Anfassen – Produkte &amp; Service</div>
+      <a href="https://21drucker.farm/" target="_blank" class="big-link">21drucker.farm</a>
+      <div class="sub">Drucke eigene Ideen, sichere die Zukunft. Lokaler Bitcoiner-Service.</div>
+    </div>
+
+    <h3 id="hardware">Hardware &amp; Backup-Lösungen</h3>
+    <div class="link-grid">
+      <a href="https://seedsigner.com/" target="_blank" class="link-item"><span class="link-icon">🔐</span> SeedSigner</a>
+      <a href="https://specter.solutions/" target="_blank" class="link-item"><span class="link-icon">🔐</span> Specter</a>
+      <a href="https://selfcustody.github.io/krux/" target="_blank" class="link-item"><span class="link-icon">🔐</span> Krux</a>
+      <a href="https://bitbox.shop/" target="_blank" class="link-item"><span class="link-icon">🔐</span> Bitbox (Codes: EINUNDZWANZIG)</a>
+      <a href="https://store.blockstream.com/product-category/physical_storage/" target="_blank" class="link-item"><span class="link-icon">🔐</span> Blockstream Jade</a>
+      <a href="https://tinyseed.io/" target="_blank" class="link-item"><span class="link-icon">🛡️</span> Tinyseed Backup</a>
+      <a href="https://www.gobrrr.me/shop/cold-storage/" target="_blank" class="link-item"><span class="link-icon">🛡️</span> Vulcan Steel-QR (GoBrrr)</a>
+      <a href="https://raspiblitz.org/" target="_blank" class="link-item"><span class="link-icon">⚙️</span> RaspiBlitz Node</a>
+    </div>
+
+    <h3 id="heizung">Bitcoin Miner als Heizungen</h3>
+    <div class="link-grid">
+      <a href="https://miners.de/collections/bitcoin-heater" target="_blank" class="link-item"><span class="link-icon">🔥</span> miners.de</a>
+      <a href="https://21energy.com/de/products/ofen" target="_blank" class="link-item"><span class="link-icon">🔥</span> 21energy</a>
+      <a href="https://ry3t.com/" target="_blank" class="link-item"><span class="link-icon">🔥</span> RY3T</a>
+      <a href="https://www.ser-was.at/bitcoin-zentralheizung" target="_blank" class="link-item"><span class="link-icon">🔥</span> Bitcoin Zentralheizung</a>
+      <a href="https://terahash.space/" target="_blank" class="link-item"><span class="link-icon">📊</span> terahash.energy – Forschung</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOUNTIES -->
+<section id="bounties">
+  <div class="container">
+    <div class="section-label">Belohnungen</div>
+    <h2>Bounties fürs Orangepillen</h2>
+    <p class="section-desc">Teilnehmer des Netzwerkes haben Belohnungen auf neue Akzeptanzstellen in Dresden ausgerufen.</p>
+
+    <div class="bounty-card">
+      <span class="amount">5.000 sats</span> – Wer das „Babička im Rausch" (Ecke Bürgerstr./Oschatzer, Pieschen) dazu bringt, Lightning zu akzeptieren.
+      <div class="author">— Al Coholic</div>
+    </div>
+    <div class="bounty-card">
+      <span class="amount">100.000 sats</span> – Für die erste Pizzabude in Dresden, die dauerhaft Sats per LN annimmt.
+      <div class="author">— Wolf</div>
+    </div>
+    <div class="bounty-card">
+      <span class="amount">21.000 sats</span> – Zusätzlich für die Person, die als wesentlicher Überbringer der orangen Pille benannt wird.
+      <div class="author">— Wolf</div>
+    </div>
+    <div class="bounty-card">
+      <span class="amount">12.000 sats</span> – Weitere Unterstützung.
+      <div class="author">— Tuvok</div>
+    </div>
+    <div class="bounty-card">
+      <span class="amount">bis 100.000 sats</span> pro Eintrag auch außerhalb Dresdens.
+      <div class="author">— <a href="https://coinpages.io/coinpages-bitcoin-scout/">coinpages</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESSOURCEN -->
+<section id="ressourcen">
+  <div class="container">
+    <div class="section-label">Wissen &amp; Tools</div>
+    <h2>Ressourcen</h2>
+
+    <h3 id="software">Empfohlene Software</h3>
+    <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.92rem;">Freie Software für die Verwaltung deiner Sats – ohne Fremde, in Verbindung mit Hardware Wallets.</p>
+    <div class="link-grid">
+      <a href="https://sparrowwallet.com/" target="_blank" class="link-item"><span class="link-icon">💻</span> Sparrow Wallet (PC)</a>
+      <a href="https://bluewallet.io/" target="_blank" class="link-item"><span class="link-icon">📱</span> BlueWallet (Android)</a>
+      <a href="https://lianawallet.com/" target="_blank" class="link-item"><span class="link-icon">🏦</span> Liana Wallet (MiniScript)</a>
+    </div>
+
+    <h3>Marktplätze</h3>
+    <div class="link-grid">
+      <a href="https://vexl.it/" target="_blank" class="link-item"><span class="link-icon">🤝</span> Vexl – Güter für Sats</a>
+      <a href="https://satoshiskleinanzeigen.space/" target="_blank" class="link-item"><span class="link-icon">🛒</span> Satoshis Kleinanzeigen</a>
+      <a href="https://plebeian.market/" target="_blank" class="link-item"><span class="link-icon">🏪</span> Plebeian Market (Nostr)</a>
+      <a href="https://lnp2pbot.com/" target="_blank" class="link-item"><span class="link-icon">🌍</span> LNp2pBot</a>
+      <a href="https://peachbitcoin.com/de/" target="_blank" class="link-item"><span class="link-icon">🍑</span> Peach – P2P Onchain</a>
+    </div>
+
+    <h3>Cashback &amp; Online Shopping</h3>
+    <div class="link-grid">
+      <a href="https://satsback.com/" target="_blank" class="link-item"><span class="link-icon">💰</span> Satsback</a>
+      <a href="https://shopinbit.com/" target="_blank" class="link-item"><span class="link-icon">🛍️</span> SHOPINBIT</a>
+      <a href="https://www.bitrefill.com/" target="_blank" class="link-item"><span class="link-icon">🎫</span> Bitrefill</a>
+      <a href="https://www.coinsbee.com/" target="_blank" class="link-item"><span class="link-icon">🐝</span> coinsbee</a>
+      <a href="https://keys4coins.com/" target="_blank" class="link-item"><span class="link-icon">🎮</span> keys4coins</a>
+      <a href="https://stekking.com/" target="_blank" class="link-item"><span class="link-icon">📈</span> Stekking</a>
+    </div>
+
+    <h3>KYC Zahlung &amp; Handel</h3>
+    <div class="link-grid">
+      <a href="https://bringin.xyz/" target="_blank" class="link-item"><span class="link-icon">💳</span> bringin – Handel &amp; Kreditkarte</a>
+      <a href="https://kraken.com/" target="_blank" class="link-item"><span class="link-icon">🐙</span> Kraken – Börse mit API</a>
+      <a href="https://www.bullbitcoin.com/" target="_blank" class="link-item"><span class="link-icon">🐂</span> Bull Bitcoin</a>
+    </div>
+
+    <h3>IT-Services (zahlbar mit BTC)</h3>
+    <div class="link-grid">
+      <a href="https://mullvad.net/" target="_blank" class="link-item"><span class="link-icon">🔒</span> Mullvad VPN</a>
+      <a href="https://torguard.net/" target="_blank" class="link-item"><span class="link-icon">🔒</span> TorGuard – VPN, E-Mail, Hosting</a>
+      <a href="https://twentyonesolutions.com/" target="_blank" class="link-item"><span class="link-icon">🌐</span> TwentyOne Solutions – WordPress</a>
+      <a href="https://host4coins.net/" target="_blank" class="link-item"><span class="link-icon">🖥️</span> Host 4 Coins – VPS</a>
+      <a href="https://ppq.ai/" target="_blank" class="link-item"><span class="link-icon">🤖</span> PayPerQ – AI via LN</a>
+    </div>
+
+    <h3>Jobs im Bitcoin-Bereich</h3>
+    <div class="link-grid">
+      <a href="https://bitcoinerjobs.com/" target="_blank" class="link-item"><span class="link-icon">💼</span> BitcoinerJobs</a>
+      <a href="https://bebitcoiner.com/" target="_blank" class="link-item"><span class="link-icon">💼</span> BeBitcoiner</a>
+      <a href="https://cryptojobslist.com/bitcoin" target="_blank" class="link-item"><span class="link-icon">💼</span> CryptoJobsList</a>
+    </div>
+
+    <h3>Anleitungen &amp; Tools</h3>
+    <div class="link-grid">
+      <a href="https://aprycot.media/blog/diy-private-schluessel-fuer-bitcoin-erstellen/" target="_blank" class="link-item"><span class="link-icon">🔑</span> Schlüssel manuell generieren</a>
+      <a href="https://iancoleman.io/bip39/" target="_blank" class="link-item"><span class="link-icon">🧮</span> Mnemonic Code Converter</a>
+      <a href="https://bitgen.org/" target="_blank" class="link-item"><span class="link-icon">⌨️</span> BitGen CLI Generator</a>
+      <a href="https://walletsrecovery.org/" target="_blank" class="link-item"><span class="link-icon">🔄</span> Wallets Recovery</a>
+    </div>
+  </div>
+</section>
+
+<!-- FIGHT THE FUD -->
+<section>
+  <div class="container">
+    <div class="section-label">Wissen vertiefen</div>
+    <h2>Fight the FUD</h2>
+    <p class="section-desc">Wer sich informieren möchte, findet im Internet alles Nötige gegen widerlegbare Argumente.</p>
+
+    <h3>Projekte &amp; Podcasts</h3>
+    <div class="link-grid">
+      <a href="https://ebea.work/resources/research/" target="_blank" class="link-item"><span class="link-icon">⚡</span> EBEA – Energy Association</a>
+      <a href="https://endthefud.org/" target="_blank" class="link-item"><span class="link-icon">🛡️</span> endthefud.org</a>
+      <a href="https://www.bitcoinisdead.org/" target="_blank" class="link-item"><span class="link-icon">💀</span> Bitcoin totgesagt</a>
+      <a href="https://coinspondent.de/honigdachs-der-bitcoin-podcast-aus-leipzig/" target="_blank" class="link-item"><span class="link-icon">🎙️</span> Honigdachs Podcast</a>
+      <a href="https://einundzwanzig.space/podcast/" target="_blank" class="link-item"><span class="link-icon">🎙️</span> Einundzwanzig Podcast</a>
+      <a href="https://podcastindex.org/podcast/6727342" target="_blank" class="link-item"><span class="link-icon">🎙️</span> Bitcoin kurz erklärt</a>
+      <a href="https://magicfuturemoney.de/" target="_blank" class="link-item"><span class="link-icon">📖</span> Magic Future Money</a>
+      <a href="https://netpositive.money/" target="_blank" class="link-item"><span class="link-icon">🌱</span> netpositive.money – Klima</a>
+    </div>
+
+    <h3 id="buecher">Bücher</h3>
+    <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.92rem;">Wir empfehlen grundsätzlich die Nutzung von <a href="https://wiki.c3d2.de/Bibliotheken_online">Bibliotheken</a>.</p>
+    <ul class="simple-list">
+      <li>📘 <a href="https://github.com/bitcoinbook/bitcoinbook" target="_blank">Mastering Bitcoin</a></li>
+      <li>📘 <a href="https://github.com/lnbook/lnbook" target="_blank">Mastering the Lightning Network</a></li>
+      <li>📙 <a href="https://isbn.de/titel/suche/die+orange+pille+Warum+Bitcoin+weit+mehr+als+nur+ein+neues+Geld+ist">Die orange Pille</a> – Warum Bitcoin weit mehr als nur ein neues Geld ist</li>
+      <li>📘 <a href="https://www.isbn.de/buch/9789949742981_bitcoin-begreifen.htm">Bitcoin begreifen</a> von Kalle Rosenbaum</li>
+      <li>📕 <a href="https://marcsteiner.tech/bitcoins-vererben-buch" target="_blank">Bitcoin verwahren und vererben</a></li>
+      <li>📚 Verlage: <a href="https://aprycot.media/" target="_blank">Aprycot Media</a> · <a href="https://bitcoinbook.shop/">Konsensus Network</a></li>
+    </ul>
+
+    <h3>Musik &amp; Kunst</h3>
+    <div class="link-grid">
+      <a href="https://josie.io/collections/original-paintings" target="_blank" class="link-item"><span class="link-icon">🎨</span> J. Bellini – Malerei</a>
+      <a href="https://thelittlehodler.com/" target="_blank" class="link-item"><span class="link-icon">🧸</span> Little Hodler Merch</a>
+      <a href="https://www.bitcoinapexart.com/" target="_blank" class="link-item"><span class="link-icon">✏️</span> Bitcoin Apex Art</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community">
+  <div class="container">
+    <div class="section-label">Netzwerk</div>
+    <h2>Community &amp; Nachbar-Meetups</h2>
+    <p class="section-desc">Manche/r findet sich auch bei weiteren Gruppen ein – regional und überregional.</p>
+
+    <div class="link-grid">
+      <a href="https://bitcoinwalk.org/dresden/" target="_blank" class="link-item"><span class="link-icon">🚶</span> BitcoinWalk Dresden</a>
+      <a href="https://c3d2.de/space.html" target="_blank" class="link-item"><span class="link-icon">💻</span> CCC Dresden (C3D2)</a>
+      <a href="https://t.me/bitcoin_meetup_leipzig" target="_blank" class="link-item"><span class="link-icon">🏙️</span> Bitcoin Leipzig</a>
+      <a href="https://t.me/BitcoinGoerlitz" target="_blank" class="link-item"><span class="link-icon">🏙️</span> Bitcoin Görlitz</a>
+      <a href="https://t.me/einundzwanzigthueringen" target="_blank" class="link-item"><span class="link-icon">🏙️</span> Einundzwanzig Thüringen</a>
+      <a href="https://t.me/Einundzwanzig_EE" target="_blank" class="link-item"><span class="link-icon">🏙️</span> Einundzwanzig Elbe-Elster</a>
+      <a href="https://t.me/Meetup21SA" target="_blank" class="link-item"><span class="link-icon">🏙️</span> Einundzwanzig Sachsen-Anhalt</a>
+      <a href="https://t.me/BitcoinMeissen" target="_blank" class="link-item"><span class="link-icon">🏙️</span> Bitcoin Treff LK Meißen</a>
+      <a href="https://www.lesfemmesorange.work/" target="_blank" class="link-item"><span class="link-icon">🍊</span> Les Femmes Orange</a>
+      <a href="https://www.meetup.com/de-DE/Bitcoin-Lab-Berlin/events/tmxjlsydcfbfb/" target="_blank" class="link-item"><span class="link-icon">🐻</span> Berliner Bitcoin-Stammtisch</a>
+      <a href="https://einundzwanzig.space/meetups/" target="_blank" class="link-item"><span class="link-icon">📋</span> Alle Treffen auf einundzwanzig.space</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">₿ Bitcoin Dresden</div>
+        <p>Diese Seite verfolgt keinerlei eigene kommerzielle Interessen und stellt lediglich Informationen bereit. Copyright is Aberglaube.</p>
+        <p style="margin-top: 0.8rem;"><a href="https://github.com/Bitcoin-Dresden/bitcoin-dresden.github.io">Quellcode auf GitHub</a></p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="https://t.me/BitcoinDresden" target="_blank">Telegram</a></li>
+          <li><a href="https://matrix.to/#/#bitcoindresden:matrix.org">Matrix</a></li>
+          <li><a href="kontakt.html">Kontaktseite</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="events.ics" download="bitcoin-dresden">Kalender (ICS)</a></li>
+          <li><a href="https://c3d2.de/calendar.html">C3D2 Kalender</a></li>
+          <li><a href="https://lerne-bitcoin.de/" target="_blank">lerne-bitcoin.de</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <details style="margin-top: 2rem;">
+      <summary style="cursor: pointer; color: var(--text-muted); font-size: 0.85rem;">🔑 Signing Key &amp; Canary</summary>
+      <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-secondary);">PGP-Fingerprint: <code style="background: rgba(255,255,255,0.05); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.78rem;">F77DBD753E1F49AE46075BA7F3E93626084BA289</code></p>
+      <div class="pgp-block">-----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
 - ----- xpub -----
@@ -342,30 +936,25 @@ Leider gibt es insb. auf Telegram vollständig geclonte Chatgruppen.
 Deshalb eine signierte Nachricht zur Überprüfung.
 
 Die korrekten Links lauten:
-
 Website: https://bitcoin-dresden.de/
 Telegram: https://t.me/BitcoinDresden
 
-Die Telegram-Gruppe heißt „Bitcoin Dresden“
-
-Beachtet auch die Schreibweise der @-Tags bei Usernamen wenn
-ihr Kontakt zu jemandem aufnehmt; Bots erstellen automatisiert
-auch sehr viele Nutzer mit nur leicht abweichender Schreibweise.
-- ----- Signatur - Standard (Electrum) -----
-IDIR6DGR1X3Bybo12vzU+KbgrHG57Kxl24JAGjAnCeELeFrOb/teporDy9+R3xTTdgrjBf6mnSquYelyO+2KDc8=
-
 -----BEGIN PGP SIGNATURE-----
-
 iHUEARYIAB0WIQT3fb11Ph9JrkYHW6fz6TYmCEuiiQUCaQJLBgAKCRDz6TYmCEui
 ia5mAP9xFVvy/TWkPm131BdKY6bHk7iBdHriS6QF9xHR4MY3wgEA/2QER33dLq0U
 DXePp2HbzIvWZUWjveo1A7HGl5ABxgs=
 =CxAh
------END PGP SIGNATURE-----
-		</pre>
+-----END PGP SIGNATURE-----</div>
+    </details>
 
-		<h5 id="kleine-hinweise">Kleine Hinweise</h5>
-		<p>Diese Seite geht keinerlei eignen kommerziellen Interessen nach und stellt lediglich Informationen bereit. <a href="https://github.com/Bitcoin-Dresden/bitcoin-dresden.github.io">Code auf GitHub</a>. Copyright is Aberglaube.</p>
-		<p>Das ggf. zu sehende Bitcoin Lightning Logo von <a href="https://github.com/capitalistdog" target="_blank">@Capitalistdog1</a> findet ihr in <a href="https://github.com/shocknet/bitcoin-lightning-logo" target="_blank">diesem Repository</a>.</p>
-	</section>
-</div></body></html>
+    <div class="footer-bottom">
+      <span>Bitcoin Lightning Logo von <a href="https://github.com/shocknet/bitcoin-lightning-logo" target="_blank">@Capitalistdog1</a></span>
+      <span>Dresden · 2026</span>
+    </div>
+  </div>
+</footer>
+
+<noscript><p style="text-align:center;padding:1rem;color:var(--text-secondary);">JavaScript ist deaktiviert. Manche Funktionen wie automatische Datumsberechnung stehen nicht zur Verfügung.</p></noscript>
+</body>
+</html>
 
