@@ -17,6 +17,8 @@ def main():
     events_html = []
 
     now = datetime.now(timezone.utc)
+    max_count = 6
+    count = 0
 
     with open(CSV_FILE, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="|")
@@ -86,9 +88,14 @@ def main():
                 f'<div class="event-date"><time datetime="{dt_iso}">{dt_hr}</time></div>'
             )
 
+            # limit amount of entries
             # for HTML print events not apparent yet
-            if now < dt <= ( now + timedelta(days=90) ):
-
+            if (
+                count < max_count and
+                now < dt <= ( now + timedelta(days=90) )
+            ):
+                count += 1
+ 
                 events_html.append(
                     '<div class="event-card next">'
                     + f"<strong>{dt_html}</strong> {html.escape(desc)}"
