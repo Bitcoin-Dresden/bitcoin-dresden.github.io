@@ -547,6 +547,17 @@ footer li a:hover { color: var(--btc-orange); }
   nav, .hero::before, body::before { display: none; }
   a { color: inherit; text-decoration: underline; }
 }
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-logo {
+  height: 1em;
+  width: auto;
+  display: block;
+}
 </style>
 </head>
 <body>
@@ -555,7 +566,8 @@ footer li a:hover { color: var(--btc-orange); }
 <nav>
   <div class="container">
     <a href="#" class="nav-brand">
-      <span class="btc-icon">₿</span>
+      <!--span class="btc-icon">₿</span-->
+      <img src="img/logo.svg" alt="Bitcoin Dresden Logo" class="nav-logo">
       Bitcoin Dresden
     </a>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menü">☰</button>
