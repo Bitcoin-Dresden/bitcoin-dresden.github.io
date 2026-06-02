@@ -3,7 +3,7 @@ import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from ics import Calendar, Event
-import html
+import html, re
 
 CSV_FILE = "events.csv"
 ICS_FILE = os.environ.get("ICS_FILE", "public/events.ics")
@@ -143,38 +143,17 @@ def main():
 """
 
     if Path(FOOT_FILE).exists():
-        html_content += Path(FOOT_FILE).read_text(encoding="utf-8") + "\n"
+        html_footer = Path(FOOT_FILE).read_text(encoding="utf-8")
+        current_year = str(datetime.now().year)
+        html_footer = re.sub(
+            r'(<span class="year">)\d{4}(</span>)',
+            rf'\g<1>{current_year}\g<2>',
+            html_footer
+        )
+        html_content += html_footer + "\n"
 
     Path(HTML_FILE).parent.mkdir(parents=True, exist_ok=True)
     Path(HTML_FILE).write_text(html_content, encoding="utf-8")
 
 if __name__ == "__main__":
     main()
-
-"""
-      <div class="event-card">
-        <div class="event-date">Do, 23. April 2026 · 19:00 Uhr</div>
-        <div class="event-title">Bitcoin Stammtisch</div>
-        <div class="event-location"><a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b</div>
-      </div>
-      <div class="event-card">
-        <div class="event-date">Mi, 13. Mai 2026 · 17:30 Uhr</div>
-        <div class="event-title">Bitcoin Stammtisch</div>
-        <div class="event-location"><a href="https://laviecoffee.de/">LaVie Coffee</a>, Wallstraße 11</div>
-      </div>
-      <div class="event-card">
-        <div class="event-date">Do, 28. Mai 2026 · 19:00 Uhr</div>
-        <div class="event-title">Bitcoin Stammtisch</div>
-        <div class="event-location"><a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b</div>
-      </div>
-      <div class="event-card">
-        <div class="event-date">Do, 11. Juni 2026 · 19:00 Uhr</div>
-        <div class="event-title">Bitcoin Stammtisch</div>
-        <div class="event-location"><a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b</div>
-      </div>
-      <div class="event-card">
-        <div class="event-date">Do, 25. Juni 2026 · 19:00 Uhr</div>
-        <div class="event-title">Bitcoin Stammtisch</div>
-        <div class="event-location"><a href="https://www.faehrgarten.de/">Fährgarten Johannstadt</a>, Käthe-Kollwitz-Ufer 23b</div>
-      </div>
-"""
