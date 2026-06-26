@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import csv
 import os
 from datetime import datetime, timedelta, timezone
@@ -124,7 +125,7 @@ def main():
     <div class="schedule-note">
       Wir treffen uns regelmäßig: <strong>In geraden Monaten am 2. Donnerstag ab 19:00 Uhr</strong>, 
       <strong>in ungeraden Monaten am 2. Mittwoch ab 17:30 Uhr</strong> (im LaVie), sowie 
-      <strong>jeden 4. Donnerstag ab 19:00 Uhr</strong>. Die Zeiten können variieren.
+      <strong>jeden 4. Donnerstag ab 19:00 Uhr</strong>. Die Zeiten und Orte können variieren.
     </div>
 
     <div class="events-grid">

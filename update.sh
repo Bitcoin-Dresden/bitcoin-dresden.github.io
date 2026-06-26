@@ -4,6 +4,7 @@ set -e
 BUILD_DIR=${BUILD_DIR:-public}
 ICS_FILE=${ICS_FILE:-$BUILD_DIR/events.ics}
 HTML_FILE=${HTML_FILE:-$BUILD_DIR/index.html}
+BUILD_SCRIPT="build_events.py"
 
 mkdir -p "$BUILD_DIR"
 
@@ -14,7 +15,7 @@ s=$(date --iso-8601|cut -d"-" -f1-2)
 grep "$s" events.csv >/dev/null && printf " added none.\n" || { printf "\n"; eventdate.sh xbtdd $(printf "$s"|tr "-" " ") >> events.csv; }
 # write to ics and html
 printf "Building ICS and HTML…"
-ICS_FILE="$ICS_FILE" HTML_FILE="$HTML_FILE" python build_events.py
+ICS_FILE="${ICS_FILE}" HTML_FILE="${HTML_FILE}" python3 "${BUILD_SCRIPT}"
 cp "${ICS_FILE}" ./
 cp "${HTML_FILE}" ./
 rm -rf "${BUILD_DIR}"
