@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import csv
 import os
+import locale
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from ics import Calendar, Event
@@ -12,6 +13,9 @@ HTML_FILE = os.environ.get("HTML_FILE", "public/index.html")  # jetzt index.html
 
 HEAD_FILE = "head.html"
 FOOT_FILE = "foot.html"
+
+locale.setlocale(locale.LC_TIME, "de_DE.UTF-8")  # Linux/macOS
+# locale.setlocale(locale.LC_TIME, "German_Germany")  # Windows
 
 def main():
     cal = Calendar()
@@ -93,7 +97,7 @@ def main():
             # for HTML print events not apparent yet
             if (
                 count < max_count and
-                now < dt <= ( now + timedelta(days=90) )
+                now < dt <= ( now + timedelta(days=106) )
             ):
                 count += 1
  
