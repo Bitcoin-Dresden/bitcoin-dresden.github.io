@@ -6,9 +6,8 @@ let
 in
 pkgs.mkShell {
   buildInputs = [
-    #~ pkgs.gnumake
     (pkgs.python313.withPackages (ps: with ps; [
-      icsNoCheck
+      ics
     ]))
   ];
 }
