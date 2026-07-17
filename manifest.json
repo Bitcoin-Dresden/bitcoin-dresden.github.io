@@ -1,0 +1,15 @@
+{
+  "name": "Bitcoin Dresden",
+  "short_name": "BTC Dresden",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#f7931aff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
