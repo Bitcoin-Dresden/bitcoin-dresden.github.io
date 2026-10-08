@@ -140,7 +140,9 @@ def main():
     <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 0.9rem;">
       Thema ist alles rund um Bitcoin – außer Wechselkurse. Als Austauschmöglichkeit zwischen den Treffen gibt es Gruppen auf 
       <a href="https://t.me/BitcoinDresden" target="_blank">Telegram</a>, 
-      <a href="https://matrix.to/#/#bitcoindresden:matrix.org">Matrix</a> und 
+      <a href="https://matrix.to/#/#bitcoindresden:matrix.org">Matrix</a>,
+      <a href="https://signal.group/#CjQKIGbMuqFBAn7sZK3rOMT9GAsvu_QzZ4XahDWcaEdsPa6oEhBDf3E5-1a6ofMvV54KoeoT">Signal</a>
+      und 
       <a href="https://simplex.chat/contact#/?v=2-7&smp=smp%3A%2F%2Fh--vW7ZSkXPeOUpfxlFGgauQmXNFOzGoizak7Ult7cw%3D%40smp15.simplex.im%2FVo6bfiY0rb-2IYx6R6R9LtkObbKguF0L%23%2F%3Fv%3D1-3%26dh%3DMCowBQYDK2VuAyEAoCKFTHTCgEdnvpm4IMwhRW7yc6yG8xsYHNkMRvwC1xI%253D%26srv%3Doauu4bgijybyhczbnxtlggo6hiubahmeutaqineuyy23aojpih3dajad.onion&data=%7B%22type%22%3A%22group%22%2C%22groupLinkId%22%3A%22falnhSgdHLTcP_lsP9DD3Q%3D%3D%22%7D">SimpleX</a>.
     </p>
   </div>
