@@ -2,38 +2,38 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
-DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden (Website zur Location: https://www.faehrgarten.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
-LOCATION:Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden
-DTSTART:20261210T180000Z
-SUMMARY:Bitcoin Stammtisch Dresden
-UID:1378f5e3-9c4e-488b-b373-5b09874ce414@1378.org
-END:VEVENT
-BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Umverteilung+2nd Layer ex LN (https://hedgedoc.c3d2.de/20261126-bitcoin-dresden)\; Adresse: HQ\, /proc\, Zentralwerk\, Riesaer Straße 32\, 01127 Dresden (Website zur Location: https://c3d2.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:HQ\, /proc\, Zentralwerk\, Riesaer Straße 32\, 01127 Dresden
-DTSTART:20261126T180000Z
+DTSTART:20261126T183000Z
 SUMMARY:Umverteilung+2nd Layer ex LN
-UID:d8d372f4-2420-4b88-b6d3-5483d3910c3a@d8d3.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden (Website zur Location: https://www.faehrgarten.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
-LOCATION:Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden
-DTSTART:20261022T170000Z
-SUMMARY:Bitcoin Stammtisch Dresden
-UID:1a7dd615-170e-4d53-aa38-16ca5d2ddd67@1a7d.org
+UID:c2e83922-8409-47ac-8fa0-462f67ed5276@c2e8.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Bautzner Tor\, Hoyerswerdaer Straße 37\, 01099 Dresden (Website zur Location: https://www.bautznertor.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:Bautzner Tor\, Hoyerswerdaer Straße 37\, 01099 Dresden
 DTSTART:20261008T170000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:41dc572d-6d04-4007-9135-9e2bbd854f98@41dc.org
+UID:d25622cd-07b3-413e-bced-0cfb8e1b44eb@d256.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: LaVie Coffee\, Wallstraße 11\, 01067 Dresden (Website zur Location: https://laviecoffee.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
 LOCATION:LaVie Coffee\, Wallstraße 11\, 01067 Dresden
 DTSTART:20261111T163000Z
 SUMMARY:Bitcoin Stammtisch Dresden
-UID:f72719d6-40b5-4fe7-9a22-610aa18912cd@f727.org
+UID:1b30d2ba-a7b3-41af-8a00-94f0f32b8184@1b30.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden (Website zur Location: https://www.faehrgarten.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
+LOCATION:Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden
+DTSTART:20261022T170000Z
+SUMMARY:Bitcoin Stammtisch Dresden
+UID:82edcca2-2b10-42c2-a641-f70dd2478c92@82ed.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Bitcoin Stammtisch Dresden\; Adresse: Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden (Website zur Location: https://www.faehrgarten.de/)\; Bitcoin Dresden Website: https://bitcoin-dresden.de/
+LOCATION:Fährgarten Johannstadt\, Käthe-Kollwitz-Ufer 23b\, 01307 Dresden
+DTSTART:20261210T180000Z
+SUMMARY:Bitcoin Stammtisch Dresden
+UID:9eed36fd-07b9-4db6-9034-bc9aab535b64@9eed.org
 END:VEVENT
 END:VCALENDAR
